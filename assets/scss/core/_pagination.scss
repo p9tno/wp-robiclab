@@ -1,0 +1,78 @@
+// Pagination ==================================================================
+
+.pagination {
+	position: relative;
+    z-index: 100;
+	padding: 1.25em 0;
+	@media (min-width: 768px) {
+		padding: 3.75em 0;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	li {
+		margin: 0 0.5em;
+		@media (min-width: 768px) {
+			margin: 0 0.9375em;
+		}
+	}
+
+	a,
+	span {
+		color: #6F90B4;
+		font-weight: 500;
+
+		text-decoration: none;
+		transition: 0.3s;
+		font-size: 1em;
+		@media (min-width: 768px) {
+			font-size: 1.375em;
+		}
+
+		&.next,
+		&.prev {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			width: 3.25em;
+			height: 3.25em;
+			border: 0.0625em solid;
+			border-color: #BABCBF;
+			border-radius: 50%;
+			color: #BABCBF;
+			font-size: 0.65em;
+			@media (min-width: 768px) {
+				font-size: 1em;
+
+			}
+
+		}
+
+		&:hover {
+			color: $color_info;
+
+			&.next,
+			&.prev {
+				color: $color_black;
+			}
+		}
+
+		&.current {
+			color: $color_info;
+		}
+
+	}
+
+	i {
+		font-size: 0.7em;
+	}
+}

@@ -1,0 +1,179 @@
+// Style for button and pseudo button for input and link
+
+.btn {
+	display: inline-flex;
+	// align-items: center;
+	justify-content: center;
+
+	border: none;
+	border: 0.0625em solid;
+	border-radius: 0.5625em;
+	border-color: $color_info;
+
+	background-color: $color_info;
+
+	font-family: $main_font_family;
+	font-weight: 600;
+	font-size: 1em;
+	color: $color_white;
+
+	text-align: center;
+	text-decoration: none;
+
+	outline: none;
+	cursor: pointer;
+	transition: 0.3s;
+
+	max-width: 100%;
+
+	min-width: 100%;
+	padding: 1.313em 1.25em;
+	@media (min-width: 768px) {
+		min-width: 17.1875em;
+	}
+
+	span {
+		line-height: 1;
+
+		font-size: 1em;
+		@media (min-width: 768px) {
+			font-size: 1.125em;
+		}
+	}
+
+	i {
+		margin-left: 0.625em;
+
+		&:before {
+			font-size: 0.75em;
+		}
+	}
+
+	&:hover {
+		border-color: darken($color_info, 8%);
+		background-color: darken($color_info, 8%);
+	}
+
+	&:active {
+		border-color: lighten($color_info, 2%);
+		background-color: lighten($color_info, 2%);
+	}
+
+	&:disabled {
+		color: red;
+		cursor: not-allowed;
+		// pointer-events: none;
+	}
+
+	&_transparent {
+		position: relative;
+		overflow: hidden;
+		background-color: transparent;
+		border-color: $color_white;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -150%;
+			height: 100%;
+			width: 2.5em;
+			transform: skewX(-45deg);
+			background: linear-gradient(90deg, rgba($color_white, 0.1), rgba($color_white, 0.8));
+			animation: flare 5s infinite linear;
+		}
+
+		&:hover {
+			border-color: $color_white;
+			color: $color_white;
+			background-color: rgba($color_white, 0.1);
+		}
+
+		&:active {
+			border-color: $color_white;
+			color: $color_white;
+			background-color: rgba($color_white, 0.2);
+		}
+
+	}
+
+	&_circle {
+		align-items: center;
+		padding: 1.063em 1.25em;
+
+		i {
+			&:before {
+				font-size: 1.5em;
+			}
+		}
+
+	}
+
+	&_transform {
+		i {
+			&:before {
+				display: block;
+				transform: rotate(90deg);
+
+			}
+		}
+	}
+
+}
+
+// START flare
+@-webkit-keyframes flare {
+	0% {
+		left: -150%;
+	}
+
+	80% {
+		left: -150%;
+	}
+
+	100% {
+		left: 150%;
+	}
+}
+@-moz-keyframes flare {
+	0% {
+		left: -150%;
+	}
+
+	80% {
+		left: -150%;
+	}
+
+	100% {
+		left: 150%;
+	}
+}
+
+@-o-keyframes flare {
+	0% {
+		left: -150%;
+	}
+
+	80% {
+		left: -150%;
+	}
+
+	100% {
+		left: 150%;
+	}
+}
+
+@keyframes flare {
+	0% {
+		left: -150%;
+	}
+
+	80% {
+		left: -150%;
+	}
+
+	100% {
+		left: 150%;
+	}
+}
+// END flare

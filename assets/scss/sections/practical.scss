@@ -1,0 +1,70 @@
+.practical {
+
+    @media (min-width: 768px) {
+        background-image: url("../img/practical_bg.svg");
+    }
+
+    &__content {
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+
+        }
+    }
+
+    &__right {
+        margin-top: -2em;
+        @media (min-width: 768px) {
+            width: 40.875em;
+            margin-right: 5em;
+            margin-top: 5em;
+
+        }
+    }
+
+    &__left {
+        position: relative;
+        height: 55em;
+        // border: 1px solid #000;
+        /* 342/16 */
+
+        font-size: 0.41em;
+        @media (min-width: 768px) {
+            font-size: 1em;
+            height: auto;
+        }
+    }
+
+    &__hand {
+        background-image: url("../img/practical_hand.png");
+        width: 41.375em;
+        height: 47.25em;
+
+        position: absolute;
+        top: 3em;
+        left: -3em;
+
+        @media (min-width: 768px) {
+            top: 1em;
+            left: -12em;
+            font-size: 1.375em;
+        }
+
+    }
+
+    &__flach {
+        // border: 1px solid #000;
+        // background-image: url("../img/flach.png");
+        width: 28em;
+        height: 23.25em;
+
+        position: absolute;
+        left: 25em;
+        top: -2em;
+        font-size: 0.8em;
+        @media (min-width: 768px) {
+            top: 5em;
+        }
+    }
+
+}

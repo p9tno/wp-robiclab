@@ -1,0 +1,139 @@
+.experiments {
+    background-color: $color_light_bg;
+
+    .tab {
+        width: auto;
+
+        &:after {
+            border-color: $color_light_bg;
+        }
+    }
+
+    &__grid {
+
+        margin-top: 3.125em;
+        @media (min-width: 768px) {
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 1.875em;
+            .pagination {
+                grid-column-start: 1;
+                grid-column-end: 5;
+            }
+        }
+
+        .video {
+            margin-bottom: 1.25em;
+            @media (min-width: 768px) {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+}
+
+.cat-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    display: flex;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 1em;
+    padding-bottom: 1.5em;
+
+
+
+    @media (min-width: 768px) {
+        padding-bottom: 1.125em;
+        margin-bottom: 2.375em;
+
+        width: fit-content;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.1875em;
+
+            background-color: rgba($color_info, 0.1);
+        }
+
+    }
+}
+
+.cat-item {
+    width: fit-content;
+    flex: none;
+
+    position: relative;
+
+    transition: 0.3s;
+    cursor: pointer;
+
+    font-size: 1em;
+    margin-right: 1.25em;
+
+    @media (min-width: 768px) {
+        font-size: 1.25em;
+        margin-right: 2.5em;
+    }
+
+    input {
+        display: none;
+
+        &:checked ~ label {
+            color: $color_info;
+
+            &:after {
+                content: '';
+                left: 0;
+                opacity: 1;
+                width: 100%;
+            }
+        }
+    }
+
+    label {
+        position: relative;
+        transition: 0.3s;
+        font-weight: 400;
+        color: #6F90B4;
+        cursor: pointer;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -0.95em;
+            left: 50%;
+            width: 0;
+            opacity: 1;
+            border-bottom: 0.1875em solid $color_info;
+            transition: 0.3s;
+            z-index: 1;
+        }
+    }
+
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover {
+        label {
+            color: $color_info;
+
+            &:after {
+                content: '';
+                left: 0;
+                opacity: 1;
+                width: 100%;
+            }
+        }
+    }
+}

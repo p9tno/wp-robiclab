@@ -1,0 +1,58 @@
+@import 'mixins/mixin'; // Fonts
+// Import files
+@import 'variables/variables';
+@import 'core/fonts';
+@import "../fonts/icon/style.css";
+@import 'core/reset';
+@import 'core/template';
+@import 'core/preloader';
+@import 'core/preloaderFilter';
+
+@import 'core/toggle';
+@import 'core/switch';
+@import 'core/search';
+
+@import 'core/header';
+
+/* start home page */
+@import 'sections/firstscreen';
+@import 'sections/digitalLab';
+@import 'sections/neuro';
+@import 'sections/practical';
+@import 'sections/robotics';
+@import 'sections/footerScroll';
+/* end home page */
+
+@import 'sections/products';
+
+@import 'sections/heading';
+@import 'sections/equipment';
+@import 'sections/delivery';
+@import 'sections/communications';
+@import 'sections/composition';
+@import 'sections/example';
+@import 'sections/notfound';
+@import 'sections/helpcenter';
+@import 'sections/experiments';
+
+@import 'core/footer';
+
+@import 'core/form';
+
+@import 'core/breadcrumb';
+@import 'core/pagination';
+@import 'core/buttons';
+
+@import 'core/collapse';
+@import 'core/tabs';
+@import 'core/figure';
+
+@import 'core/navbar';
+@import 'core/contacts';
+@import 'core/toTop';
+@import 'core/download';
+
+@import 'vendor/modal';
+@import 'vendor/swiper';
+
+@import 'core/dark_theme';

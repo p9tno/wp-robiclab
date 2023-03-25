@@ -1,0 +1,240 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?to3v5s');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?to3v5s#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?to3v5s') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?to3v5s') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?to3v5s##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon_"], [class*=" icon_"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_play {
+  &:before {
+    content: $icon_play; 
+  }
+}
+.icon_compare {
+  &:before {
+    content: $icon_compare; 
+  }
+}
+.icon_check_mark {
+  &:before {
+    content: $icon_check_mark; 
+  }
+}
+.icon_cheak_list {
+  &:before {
+    content: $icon_cheak_list; 
+  }
+}
+.icon_list {
+  &:before {
+    content: $icon_list; 
+  }
+}
+.icon_note {
+  &:before {
+    content: $icon_note; 
+  }
+}
+.icon_sim {
+  &:before {
+    content: $icon_sim; 
+  }
+}
+.icon_glasses_book {
+  &:before {
+    content: $icon_glasses_book; 
+  }
+}
+.icon_mac {
+  &:before {
+    content: $icon_mac; 
+  }
+}
+.icon_windows {
+  &:before {
+    content: $icon_windows; 
+  }
+}
+.icon_linux {
+  &:before {
+    content: $icon_linux; 
+  }
+}
+.icon_physics {
+  &:before {
+    content: $icon_physics; 
+  }
+}
+.icon_maths {
+  &:before {
+    content: $icon_maths; 
+  }
+}
+.icon_chemistry {
+  &:before {
+    content: $icon_chemistry; 
+  }
+}
+.icon_biology {
+  &:before {
+    content: $icon_biology; 
+  }
+}
+.icon_geography {
+  &:before {
+    content: $icon_geography; 
+  }
+}
+.icon_natural_science {
+  &:before {
+    content: $icon_natural_science; 
+  }
+}
+.icon_ecology {
+  &:before {
+    content: $icon_ecology; 
+  }
+}
+.icon_obj {
+  &:before {
+    content: $icon_obj; 
+  }
+}
+.icon_world {
+  &:before {
+    content: $icon_world; 
+  }
+}
+.icon_nanotechnology {
+  &:before {
+    content: $icon_nanotechnology; 
+  }
+}
+.icon_baby {
+  &:before {
+    content: $icon_baby; 
+  }
+}
+.icon_engineering {
+  &:before {
+    content: $icon_engineering; 
+  }
+}
+.icon_astronomy {
+  &:before {
+    content: $icon_astronomy; 
+  }
+}
+.icon_history {
+  &:before {
+    content: $icon_history; 
+  }
+}
+.icon_physical {
+  &:before {
+    content: $icon_physical; 
+  }
+}
+.icon_clock {
+  &:before {
+    content: $icon_clock; 
+  }
+}
+.icon_certification {
+  &:before {
+    content: $icon_certification; 
+  }
+}
+.icon_location {
+  &:before {
+    content: $icon_location; 
+  }
+}
+.icon_mouse {
+  &:before {
+    content: $icon_mouse; 
+  }
+}
+.icon_phone {
+  &:before {
+    content: $icon_phone; 
+  }
+}
+.icon_loop {
+  &:before {
+    content: $icon_loop; 
+  }
+}
+.icon_mail {
+  &:before {
+    content: $icon_mail; 
+  }
+}
+.icon_moon {
+  &:before {
+    content: $icon_moon; 
+  }
+}
+.icon_arrow_circle {
+  &:before {
+    content: $icon_arrow_circle; 
+  }
+}
+.icon_arrow_right {
+  &:before {
+    content: $icon_arrow_right; 
+  }
+}
+.icon_arrow_left {
+  &:before {
+    content: $icon_arrow_left; 
+  }
+}
+.icon_to_Top {
+  &:before {
+    content: $icon_to_Top; 
+  }
+}
+.icon_slider_left {
+  &:before {
+    content: $icon_slider_left; 
+  }
+}
+.icon_slider_right {
+  &:before {
+    content: $icon_slider_right; 
+  }
+}
+.icon_sun {
+  &:before {
+    content: $icon_sun; 
+  }
+}
+.icon_close {
+  &:before {
+    content: $icon_close; 
+  }
+}
+

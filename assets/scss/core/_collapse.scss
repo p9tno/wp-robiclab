@@ -1,0 +1,128 @@
+.faq {
+    .row__title {
+        @media (min-width: 768px) {
+            margin-bottom: 3.125em;
+        }
+    }
+    margin-bottom: 3.125em;
+    @media (min-width: 768px) {
+        margin-bottom: 3.75em;
+    }
+
+    &__content {
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.875em;
+
+            > * {
+                width: 50%;
+            }
+        }
+    }
+
+}
+
+.collapse {
+    .section__content {
+        margin-bottom: 0.9375em;
+    }
+
+    background-color: $color_white;
+    border-radius: 1em;
+    box-shadow: 0 0.75em 0.8125em -1.0625em rgba(42, 51, 69, 0.15);
+    transition: 0.3s;
+    margin-bottom: 0.625em;
+    padding: 0.9375em 1.25em;
+    @media (min-width: 768px) {
+        padding: 2em;
+        margin-bottom: 1.875em;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0;
+        transition: 0.3s;
+
+        span {
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+            color: $main_color;
+            font-size: 1.125em;
+            margin-right: 1em;
+            @media (min-width: 768px) {
+                font-size: 1.5em;
+            }
+        }
+
+        &.open {
+            margin-bottom: 1em;
+            @media (min-width: 768px) {
+                margin-bottom: 1.875em;
+
+            }
+
+            span {
+                color: $color_info;
+            }
+
+            .collapse__button {
+                transform: rotate(180deg);
+
+                &:before {
+                    width: 0;
+                }
+            }
+        }
+    }
+
+    &__button {
+        flex: none;
+
+        transform: rotate(0deg);
+        // border-radius: 50%;
+        transition: 0.4s cubic-bezier(0.2, 0.6, 0.3, 1.1);
+        cursor: pointer;
+
+        width: 1.125em;
+        height: 1.125em;
+        @media (min-width: 768px) {
+            padding: 1.5em;
+            width: 1.625em;
+            height: 1.625em;
+        }
+
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color_info;
+
+        }
+
+        &:before {
+            height: 100%;
+            width: 0.125em;
+        }
+
+        &:after {
+            height: 0.125em;
+            width: 100%;
+        }
+
+    }
+
+    &__body {
+        display: none;
+
+        &.open {
+            display: block;
+        }
+    }
+}

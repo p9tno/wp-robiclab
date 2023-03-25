@@ -1,0 +1,627 @@
+.chart-light {
+    opacity: 1;
+    visibility: visible;
+}
+
+.chart-dark {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dark_theme {
+    .chart-light {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .chart-dark {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .following__mask {
+        background-image: url("../img/mask_dark.png");
+
+    }
+
+    // ---------------------- SECTION
+
+    .section_changeTheme {
+        background-color: $color_dark;
+    }
+
+    .section__title_black {
+        span {
+            color: $color_white;
+            transition: 0.3s;
+        }
+    }
+
+    .section__content_black {
+        p {
+            color: $color_white;
+            transition: 0.3s;
+        }
+    }
+
+    // ---------------------- animate_bg
+
+    @media (min-width: 768px) {
+        .animate_bg {
+            &:after,
+            &:before {
+                background: rgba(0,0,0,0.1);
+            }
+        }
+
+    }
+
+    // ---------------------- HEADER
+
+    .header_primary_active {
+        background: rgba(#31343D, 1);
+
+        // start switch
+        .switch {
+            &__label {
+                input {
+                    &:checked ~ span i {
+                        background-color: #01B5FE;
+
+                        &:after {
+                            color: $color_white;
+                        }
+                    }
+                }
+
+                span {
+                    border: 0.0625em solid $color_white;
+                    background-color: transparent;
+                }
+
+            }
+        }
+        // end switch
+
+        // start search
+        .search {
+            input[type=text] {
+                border-color: rgba($color_white, 0.35);
+                color: rgba($color_white, 0.7);
+
+                &:hover {
+                    background-color: transparent;
+                    border-color: rgba($color_white, 0.35);
+                }
+
+                &:focus {
+                    background-color: transparent;
+                    border-color: rgba($color_white, 0.35);
+                }
+
+                @include placeholder {
+                    color: rgba($color_white, 0.7);
+
+                }
+
+            }
+
+            .btn_search {
+                i {
+                    color: rgba($color_white, 0.7);
+                }
+            }
+
+        }
+        // end search
+
+        // start button
+        .header__button {
+
+            border: 0.0625em solid rgba($color_white, 0.35);
+
+            > i {
+                color: rgba($color_white, 0.7);
+            }
+
+            &.active {
+                background-color: transparent;
+
+                > i {
+                    color: #00B5FF;
+                }
+            }
+
+        }
+        // end button
+
+        .toggle {
+            &__label {
+                span {
+                    color: $color_white;
+                }
+            }
+
+            &__toggle {
+                color: $color_white;
+            }
+
+        }
+
+        .header__content {
+
+            background-color: $color_dark_bg;
+
+            &:after {
+
+                background-color: $color_dark_bg;
+
+            }
+
+        }
+
+        .header__close {
+            &:after {
+                color: rgba($color_dark_text, 0.5);
+            }
+
+            &:hover {
+                &:after {
+                    color: rgba($color_dark_text, 1);
+                }
+            }
+        }
+
+        .header__title {
+            span {
+                color: $color_white;
+            }
+        }
+
+        .header__item {
+            a,
+            span {
+                color: $color_dark_text;
+            }
+
+        }
+
+        .header__icon {
+
+            background-color: #3A3D47;
+            color: $color_dark_text;
+
+        }
+
+        .header__label {
+            color: $color_dark_text;
+        }
+    }
+
+    // ---------------------- TABS
+
+    .tabs-wrapper {
+        .tabs {
+            @media (min-width: 768px) {
+                &:after {
+                    background-color: rgba($color_white, 0.4);
+                }
+
+            }
+
+            .tab {
+                color: rgba($color_white, 0.4);
+
+                &:after {
+                    border-bottom: 0.1875em solid rgba($color_white, 1);
+                }
+
+                &.active {
+                    color: rgba($color_white, 1);
+                }
+            }
+
+            .tab_danger {
+                color: rgba($color_danger, 0.5);
+
+                &:after {
+                    border-bottom: 0.1875em solid rgba($color_danger, 0.75);
+
+                }
+
+                &.active,
+                &:hover {
+                    color: rgba($color_danger, 0.75);
+                }
+            }
+
+        }
+    }
+
+    // ---------------------- cat-item
+    .cat-list {
+
+        @media (min-width: 768px) {
+            &:after {
+                background-color: rgba($color_white, 0.4);
+            }
+
+        }
+    }
+
+    .cat-item {
+        input {
+
+            &:checked ~ label {
+                color: $color_white;
+            }
+        }
+        label {
+            color: rgba($color_white, 0.4);
+            &:after {
+                border-bottom: 0.1875em solid rgba($color_white, 1);
+            }
+        }
+
+
+        &.current-cat,
+        &:hover {
+            label {
+                color: rgba($color_white, 1);
+            }
+        }
+    }
+
+    // ---------------------- breadcrumbs_dark
+    .breadcrumbs_dark {
+        .kama_breadcrumbs {
+            a,
+            span {
+                color: rgba($color_white, 0.6);
+            }
+
+            .kb_sep {
+                background-color: rgba($color_white, 0.6);
+            }
+        }
+    }
+
+    // ---------------------- equipment
+    .equipment {
+        &__label {
+            span {
+                color: $color_white;
+            }
+        }
+
+        &__item {
+            span {
+                color: $color_dark_text;
+            }
+        }
+
+        &__icon {
+
+            background-color: $color_dark_bg;
+            color: $color_dark_text;
+        }
+
+        &__list {
+            &_sensors {
+                .equipment__item {
+                    background-color: $color_dark_bg;
+                }
+            }
+
+            &_list {
+                .equipment__item {
+                    &:before {
+                        background-color: $color_dark_text;
+
+                    }
+                }
+            }
+        }
+
+        &__link {
+            color: $color_white;
+
+            &:before {
+                color: $color_white;
+            }
+        }
+    }
+
+    // ---------------------- delivery
+    .delivery__label {
+        span {
+            color: $color_white;
+        }
+    }
+
+    .delivery__title {
+        span {
+            color: $color_white;
+        }
+    }
+
+    .delivery__contacts {
+        background-color: $color_dark_bg;
+        // box-shadow: rgba($color_dark_bg;, 0.2) 0 8px 24px;
+    }
+
+    // ---------------------- delivery communications
+    .communications,
+    .delivery {
+        .contacts {
+            &__item {
+                i {
+                    background-color: #3A3D47;
+                    color: $color_dark_text;
+
+                }
+
+                span {
+                    color: $color_dark_text;
+                    transition: 0.3s;
+                }
+
+                a {
+                    color: $color_dark_text;
+
+                }
+            }
+        }
+    }
+
+    // ---------------------- composition
+
+    .composition {
+        &__item {
+            span {
+                color: $color_dark_text;
+            }
+        }
+    }
+
+    // ---------------------- swiper
+    .swiper-scrollbar {
+        background: $color_dark_bg;
+    }
+
+    .swiper-pagination-fraction {
+        color: $color_white;
+    }
+
+    .swiper-pagination-current {
+        color: #387AF2;
+    }
+
+    .swiper {
+        &__arrows {
+            i {
+                color: $color_white;
+
+                &.swiper-button-disabled {
+                    color: $color_dark_text;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    // ---------------------- example
+    .example {
+        background-color: $color_dark_bg;
+    }
+
+    // ---------------------- helpcenter
+
+    .helpcenter {
+        // &__title {
+        //     span {
+        //         color: $color_white;
+        //     }
+        // }
+
+        // &__nav {
+        //     .menu-item {
+        //         a {
+        //             background-color: $color_dark_bg;
+        //             color: $color_dark_text;
+        //         }
+
+        //         &:hover {
+        //             a {
+        //                 background-color: $color_info;
+        //                 color: $color_white;
+        //             }
+        //         }
+        //     }
+
+        //     .current-menu-item {
+        //         a {
+        //             background-color: $color_info;
+        //             color: $color_white;
+        //         }
+        //     }
+        // }
+
+        .tab-masc {
+            &:after {
+                background-image: url("../img/mask_dark.png");
+
+            }
+        }
+
+        &__row {
+            &:nth-child(2n) {
+                background-color: $color_dark_bg;
+
+                // $color_dark_bg
+
+                .swiper-scrollbar {
+                    background: $color_dark_text;
+                }
+
+            }
+        }
+
+    }
+
+    .row {
+        &__title {
+            span {
+                color: $color_white;
+            }
+        }
+
+        &__list {
+            i {
+                background-color: $color_dark_bg;
+                color: $color_dark_text;
+            }
+
+            a {
+                color: $color_dark_text;
+            }
+        }
+
+        &__slider {
+            .swiper__label {
+                span {
+                    color: $color_white;
+                }
+            }
+        }
+
+    }
+
+    .video {
+        &__bottom {
+            span {
+                color: $color_dark_text;
+            }
+        }
+    }
+
+    .collapse {
+        .section__content {
+            p {
+                color: $color_dark_text;
+            }
+        }
+        background-color: $color_dark_bg;
+
+        &__title {
+            span {
+                color: $color_dark_text;
+            }
+
+            &.open {
+                span {
+                    color: $color_white;
+                }
+
+                .collapse__button {
+                    &:after,
+                    &:before {
+                        background-color: $color_white;
+                    }
+                }
+            }
+        }
+
+        &__button {
+            &:after,
+            &:before {
+                background-color: $color_dark_text;
+            }
+
+        }
+
+    }
+
+    .documentation {
+        &__item {
+
+            border-color: rgba($color_dark_bg, 1);
+
+            &:first-child {
+                border-color: rgba($color_dark_bg, 1);
+            }
+        }
+
+        &__button {
+            .btn_transparent {
+                color: $color_white;
+            }
+        }
+    }
+
+    // ---------------------- pagination
+
+    .pagination {
+        a,
+        span {
+            color: $color_dark_text;
+
+            &:hover {
+                color: $color_white;
+
+                &.next,
+                &.prev {
+                    color: $color_white;
+                    border-color: $color_white;
+                }
+            }
+
+            &.current {
+                color: $color_white;
+            }
+        }
+    }
+
+    // ----------------------
+    ::-webkit-scrollbar-track {
+        background-color: rgba($color_dark, 0.75);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba($color_dark_text, 0.75);
+    }
+
+    // ----------------------
+
+    // .preloader {
+    //     &__wrap {
+    //         background-color: $color_dark_bg;
+    //     }
+    // }
+
+    .preloaderFilter {
+    
+        &__wrap {
+            background-color: rgba($color_dark, 1);
+        }
+    
+        border-top-color: rgba($color_white, 0.75);
+    
+        &:before {
+            border-top-color: rgba($color_white, 0.5);
+        }
+    
+        &:after {
+            border-top-color: rgba($color_white, 1);
+        }
+    
+        
+    }
+    
+    
+
+
+}
