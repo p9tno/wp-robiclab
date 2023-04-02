@@ -219,7 +219,7 @@
             font-size: 0.9375em;
             /* 15/16 */
             font-weight: 500;
-            border-radius: 2.875em;
+            border-radius: 0.5em;
         }
     
         .ajax-search::-webkit-scrollbar {
@@ -229,31 +229,31 @@
     
         .ajax-search::-webkit-scrollbar-thumb {
             background-color: #dddddd;
-            border-radius: 4em;
+            border-radius: 2em;
         }
     
         .ajax-search__item {
             position: relative;
             // border-top: 1px solid rgba(224, 229, 231, 0.5);
-            padding: 0.875em 1.5em;
+            padding: 0.75em 1.5em;
+
             cursor: pointer;
             list-style-type: none;
         }
     
         .ajax-search__link {
-            color: var(--accent);
             line-height: 130%;
-            margin-bottom: 10px;
-            font-size: 13px;
+            // margin-bottom: 0.625em;
+            font-size: 1em;
             display: block;
-            color: #003435;
+            color: $main_color;
         }
     
         .ajax-search__excerpt {
             cursor: default;
-            font-size: 11px;
+            font-size: 0.625em;
             line-height: 140%;
-            color: #253238;
+            color: $main_color;
         }
     }
 

@@ -620,7 +620,24 @@
     
         
     }
-    
+
+    // ---------------------- ajax-search
+
+    .header {
+        .search {
+            .ajax-search {
+                background: $color_dark_bg;
+                color: $color_dark_text;
+            }
+        
+            .ajax-search__link {
+                color: $color_dark_text;
+            }
+            .ajax-search__excerpt {
+                color: $color_dark_text;
+            }
+        }
+    }
     
 
 

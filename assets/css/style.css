@@ -1393,7 +1393,7 @@ body {
   font-size: 0.9375em;
   /* 15/16 */
   font-weight: 500;
-  border-radius: 2.875em;
+  border-radius: 0.5em;
 }
 .header .search .ajax-search::-webkit-scrollbar {
   width: 0.375em;
@@ -1401,27 +1401,25 @@ body {
 }
 .header .search .ajax-search::-webkit-scrollbar-thumb {
   background-color: #dddddd;
-  border-radius: 4em;
+  border-radius: 2em;
 }
 .header .search .ajax-search__item {
   position: relative;
-  padding: 0.875em 1.5em;
+  padding: 0.75em 1.5em;
   cursor: pointer;
   list-style-type: none;
 }
 .header .search .ajax-search__link {
-  color: var(--accent);
   line-height: 130%;
-  margin-bottom: 10px;
-  font-size: 13px;
+  font-size: 1em;
   display: block;
-  color: #003435;
+  color: #08203A;
 }
 .header .search .ajax-search__excerpt {
   cursor: default;
-  font-size: 11px;
+  font-size: 0.625em;
   line-height: 140%;
-  color: #253238;
+  color: #08203A;
 }
 
 .header {
@@ -6944,4 +6942,14 @@ input[type=number] {
 }
 .dark_theme .preloaderFilter:after {
   border-top-color: white;
+}
+.dark_theme .header .search .ajax-search {
+  background: #31343D;
+  color: #B5B5B5;
+}
+.dark_theme .header .search .ajax-search__link {
+  color: #B5B5B5;
+}
+.dark_theme .header .search .ajax-search__excerpt {
+  color: #B5B5B5;
 }
