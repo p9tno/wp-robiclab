@@ -40,9 +40,12 @@ function robiclab_scripts() {
 		wp_enqueue_script( 'robiclab-filter', get_template_directory_uri() . '/assets/js/filter.js', array(), _S_VERSION, true );
 	}
 
+	if ( is_page_template(['template-laboratory.php']) ){
+		wp_enqueue_script( 'robiclab-laboratory', get_template_directory_uri() . '/assets/js/laboratory.js', array(), _S_VERSION, true );
+	}
+
 	
 
-	wp_enqueue_script( 'robiclab-laboratory', get_template_directory_uri() . '/assets/js/laboratory.js', array(), _S_VERSION, true );
 
 	
 	wp_enqueue_script( 'robiclab-modal', get_template_directory_uri() . '/assets/js/modal.js', array(), _S_VERSION, true );

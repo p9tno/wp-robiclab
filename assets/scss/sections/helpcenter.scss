@@ -198,9 +198,11 @@
             text-align: center;
             font-size: 0.5em;
             cursor: pointer;
-
+            width: 12em;
+            
             @media (min-width: 768px) {
                 font-size: 1em;
+                width: auto;
             }
 
             &:last-child {
@@ -267,7 +269,9 @@
         }
     }
 
-    &__bottom {}
+    &__bottom {
+        padding-top: 2em;
+    }
 
 }
 
@@ -334,8 +338,11 @@
         list-style: none;
 
         @media (min-width: 768px) {
-            columns: 2;
-            column-gap: 2em;
+            display: flex;
+            flex-wrap: wrap;
+            > * {
+                width: 50%;
+            }
         }
 
         li {
@@ -373,7 +380,7 @@
     }
 
     &__slider {
-        width: 40.25em;
+        // width: 40.25em;
 
         @media (min-width: 768px) {
             width: 125.625em;

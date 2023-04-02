@@ -3925,10 +3925,12 @@ body {
   text-align: center;
   font-size: 0.5em;
   cursor: pointer;
+  width: 12em;
 }
 @media (min-width: 768px) {
   .helpcenter__main .tab-masc {
     font-size: 1em;
+    width: auto;
   }
 }
 .helpcenter__main .tab-masc:last-child {
@@ -3979,6 +3981,10 @@ body {
   background-color: #ffffff;
   transition: 0.3s;
 }
+.helpcenter__bottom {
+  padding-top: 2em;
+}
+
 .row__title {
   line-height: 1.15;
   display: flex;
@@ -4043,8 +4049,11 @@ body {
 }
 @media (min-width: 768px) {
   .row__list {
-    columns: 2;
-    column-gap: 2em;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .row__list > * {
+    width: 50%;
   }
 }
 .row__list li {
@@ -4075,9 +4084,6 @@ body {
   .row__button {
     margin-top: 0;
   }
-}
-.row__slider {
-  width: 40.25em;
 }
 @media (min-width: 768px) {
   .row__slider {

@@ -40,7 +40,7 @@ $(document).ready(function() {
         //     delay: 5000,
         // },
         // lazy: true,
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 20,
 
         // loop: true,

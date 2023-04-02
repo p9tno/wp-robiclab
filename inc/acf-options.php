@@ -1491,6 +1491,550 @@ function my_template_acf_mataboxes(){
 
 
 
+    // BEGIN helpcenter section template-helpcenter.php
+    acf_add_local_field_group(array(
+        'key' => 'acf_helpcenter_top_settings',
+        'title' => 'Настройки шапки "Справочный центр"',
+        'fields' => array(
+            array(
+                'key' => 'helpcenter_top_title',
+                'label' => 'Заголовок',
+                'name' => 'helpcenter_top_title',
+                'type' => 'text',
+            ),
+            array(
+                'key' => 'helpcenter_top_desc',
+                'label' => 'Описание',
+                'name' => 'helpcenter_top_desc',
+                'type' => 'textarea',
+                'rows' => 2,
+                'instructions' => 'Используйте тег <b>p</b> для выделения абзацев',
+                'placeholder' => '<p>Абзац</p>'
+            ),
+            array(
+                'key' => 'helpcenter_top_img_id',
+                'label' => 'Изображение',
+                'name' => 'helpcenter_top_img_id',
+                'type' => 'image',
+                'return_format' => 'id',  // 'id' || 'url' || 'array'
+                'preview_size' => 'thumbnail', // (thumbnail, medium, large, full or custom size)
+                'instructions' => 'Рекомендуемое разрешение изображения не более 550/575px.',
+            ),
+            array(
+                'key' => 'helpcenter_top_btn_blue',
+                'label' => 'Кнопка',
+                'name' => 'helpcenter_top_btn_blue',
+                'type' => 'link',
+                'return_format' => 'array',  // 'array' || 'url'
+            ),
+
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'template-helpcenter.php',
+                )
+            ),
+        ),
+        'menu_order' => 1,
+    ));
+    // END helpcenter section
+    // ---------------------------------------------------------
+    // BEGIN helpcenter helpcenter_main section
+    acf_add_local_field_group(array(
+        'key' => 'acf_helpcenter_main_settings',
+        'title' => 'Основные настройки "Справочный центр"',
+        'fields' => array(
+            // ------------------------------- offline Offline version on PC
+            array (
+                'key' => 'tab_offline_general',
+                'label' => 'Офлайн версия на ПК', 
+                'type' => 'tab',
+            ),
+            array(
+                'key' => 'offline_boolean',
+                'label' => 'Отображать таб?',
+                'name' => 'offline_boolean',
+                'type' => 'true_false',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => 'Да',
+                'ui_off_text' => 'Нет',
+            ),
+            array(
+                'key' => 'offline_row',
+                'label' => 'Ряд',
+                'name' => 'offline_row',
+                'type' => 'repeater',
+                'layout' => 'block',  // 'block' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'row_img_id',
+                        'label' => 'Изображение',
+                        'name' => 'row_img_id',
+                        'type' => 'image',
+                        'return_format' => 'id',  // 'id' || 'url' || 'array'
+                        'preview_size' => 'full', // (thumbnail, medium, large, full or custom size)
+                        'instructions' => 'Рекомендуемое разрешение изображения не более 34/34px.',
+                        'wrapper' => array (
+                            'width' => '30',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_title',
+                        'label' => 'Заголовок',
+                        'name' => 'row_title',
+                        'type' => 'text',
+                        'instructions' => 'Windows, Linux, Mac OS',
+                        'default_value' => 'Windows',
+                        'wrapper' => array (
+                            'width' => '70',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_desc',
+                        'label' => 'Описание',
+                        'name' => 'row_desc',
+                        'type' => 'textarea',
+                        'rows' => 2,
+                        'default_value' => 'Рекомендации входят в состав готовых решений по цифровым лабораториям и содержат руководство по работе с ними, а также описание экспериментов.',
+                        'wrapper' => array (
+                            'width' => '70',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_link',
+                        'label' => 'Ссылка',
+                        'name' => 'row_link',
+                        'type' => 'link',
+                        'instructions' => 'Скачать инструкцию',
+                        'return_format' => 'array',  // 'array' || 'url'
+                        'wrapper' => array (
+                            'width' => '30',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_list',
+                        'label' => 'Ссылки',
+                        'name' => 'row_list',
+                        'type' => 'repeater',
+                        'layout' => 'table',  // 'block' || 'row' || 'table'
+                        'button_label' => 'Добавить',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'row_list_link',
+                                'label' => 'Ссылка',
+                                'name' => 'row_list_link',
+                                'type' => 'link',
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_relations',
+                        'label' => 'Выбирите: "Видео-инструкции"',
+                        'name' => 'row_relations',
+                        'type' => 'post_object',
+                        'allow_null' => 1,
+                        'multiple' => 1,
+                        'return_format' => 'id',  // 'id' || 'object'
+                        'post_type' => 'video',  // or array of post types e.g. ['post', 'page']
+                        'taxonomy' => '',  // or array of terms e.g. ['category:term-slug']
+                    ),
+                ),
+            ),
+            // ------------------------------- onnline onnline version on PC
+            array (
+                'key' => 'tab_onnline_general',
+                'label' => 'Онлайн версия на ПК', 
+                'type' => 'tab',
+            ),
+            array(
+                'key' => 'onnline_boolean',
+                'label' => 'Отображать таб?',
+                'name' => 'onnline_boolean',
+                'type' => 'true_false',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => 'Да',
+                'ui_off_text' => 'Нет',
+            ),
+            array(
+                'key' => 'onnline_row',
+                'label' => 'Ряд',
+                'name' => 'onnline_row',
+                'type' => 'repeater',
+                'layout' => 'block',  // 'block' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'row_img_id',
+                        'label' => 'Изображение',
+                        'name' => 'row_img_id',
+                        'type' => 'image',
+                        'return_format' => 'id',  // 'id' || 'url' || 'array'
+                        'preview_size' => 'full', // (thumbnail, medium, large, full or custom size)
+                        'instructions' => 'Рекомендуемое разрешение изображения не более 34/34px.',
+                        'wrapper' => array (
+                            'width' => '30',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_title',
+                        'label' => 'Заголовок',
+                        'name' => 'row_title',
+                        'type' => 'text',
+                        'instructions' => 'Windows, Linux, Mac OS',
+                        'default_value' => 'Windows',
+                        'wrapper' => array (
+                            'width' => '70',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_desc',
+                        'label' => 'Описание',
+                        'name' => 'row_desc',
+                        'type' => 'textarea',
+                        'rows' => 2,
+                        'default_value' => 'Рекомендации входят в состав готовых решений по цифровым лабораториям и содержат руководство по работе с ними, а также описание экспериментов.',
+                        'wrapper' => array (
+                            'width' => '70',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_link',
+                        'label' => 'Ссылка',
+                        'name' => 'row_link',
+                        'type' => 'link',
+                        'instructions' => 'Скачать инструкцию',
+                        'return_format' => 'array',  // 'array' || 'url'
+                        'wrapper' => array (
+                            'width' => '30',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_list',
+                        'label' => 'Ссылки',
+                        'name' => 'row_list',
+                        'type' => 'repeater',
+                        'layout' => 'table',  // 'block' || 'row' || 'table'
+                        'button_label' => 'Добавить',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'row_list_link',
+                                'label' => 'Ссылка',
+                                'name' => 'row_list_link',
+                                'type' => 'link',
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_relations',
+                        'label' => 'Выбирите: "Видео-инструкции"',
+                        'name' => 'row_relations',
+                        'type' => 'post_object',
+                        'allow_null' => 1,
+                        'multiple' => 1,
+                        'return_format' => 'id',  // 'id' || 'object'
+                        'post_type' => 'video',  // or array of post types e.g. ['post', 'page']
+                        'taxonomy' => '',  // or array of terms e.g. ['category:term-slug']
+                    ),
+                ),
+            ),
+            // ------------------------------- tablet_and_phone
+            array (
+                'key' => 'tab_tablet_and_phone_general',
+                'label' => 'Планшет и телефон', 
+                'type' => 'tab',
+            ),
+            array(
+                'key' => 'tablet_and_phone_boolean',
+                'label' => 'Отображать таб?',
+                'name' => 'tablet_and_phone_boolean',
+                'type' => 'true_false',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => 'Да',
+                'ui_off_text' => 'Нет',
+            ),
+            array(
+                'key' => 'tablet_and_phone_row',
+                'label' => 'Ряд',
+                'name' => 'tablet_and_phone_row',
+                'type' => 'repeater',
+                'layout' => 'block',  // 'block' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'row_img_id',
+                        'label' => 'Изображение',
+                        'name' => 'row_img_id',
+                        'type' => 'image',
+                        'return_format' => 'id',  // 'id' || 'url' || 'array'
+                        'preview_size' => 'full', // (thumbnail, medium, large, full or custom size)
+                        'instructions' => 'Рекомендуемое разрешение изображения не более 34/34px.',
+                        'wrapper' => array (
+                            'width' => '30',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_title',
+                        'label' => 'Заголовок',
+                        'name' => 'row_title',
+                        'type' => 'text',
+                        'instructions' => 'Windows, Linux, Mac OS',
+                        'default_value' => 'Windows',
+                        'wrapper' => array (
+                            'width' => '70',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_desc',
+                        'label' => 'Описание',
+                        'name' => 'row_desc',
+                        'type' => 'textarea',
+                        'rows' => 2,
+                        'default_value' => 'Рекомендации входят в состав готовых решений по цифровым лабораториям и содержат руководство по работе с ними, а также описание экспериментов.',
+                        'wrapper' => array (
+                            'width' => '70',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_link',
+                        'label' => 'Ссылка',
+                        'name' => 'row_link',
+                        'type' => 'link',
+                        'instructions' => 'Скачать инструкцию',
+                        'return_format' => 'array',  // 'array' || 'url'
+                        'wrapper' => array (
+                            'width' => '30',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_list',
+                        'label' => 'Ссылки',
+                        'name' => 'row_list',
+                        'type' => 'repeater',
+                        'layout' => 'table',  // 'block' || 'row' || 'table'
+                        'button_label' => 'Добавить',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'row_list_link',
+                                'label' => 'Ссылка',
+                                'name' => 'row_list_link',
+                                'type' => 'link',
+                            ),
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_relations',
+                        'label' => 'Выбирите: "Видео-инструкции"',
+                        'name' => 'row_relations',
+                        'type' => 'post_object',
+                        'allow_null' => 1,
+                        'multiple' => 1,
+                        'return_format' => 'id',  // 'id' || 'object'
+                        'post_type' => 'video',  // or array of post types e.g. ['post', 'page']
+                        'taxonomy' => '',  // or array of terms e.g. ['category:term-slug']
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'template-helpcenter.php',
+                ),
+            ),
+        ),
+        'menu_order' => 10,
+    ));
+    // END helpcenter helpcenter_main section
+    // ---------------------------------------------------------
+    // BEGIN faq section
+    acf_add_local_field_group(array(
+        'key' => 'acf_faq_settings',
+        'title' => 'Популярные вопросы',
+        'fields' => array(
+            array(
+                'key' => 'faq_boolean',
+                'label' => 'Отображать блок?',
+                'name' => 'faq_boolean',
+                'type' => 'true_false',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => 'Да',
+                'ui_off_text' => 'Нет',
+            ),
+            array(
+                'key' => 'faq_title',
+                'label' => 'Заголовок',
+                'name' => 'faq_title',
+                'type' => 'text',
+                'default_value' => 'Популярные вопросы',
+            ),
+            // ------------------------------- tab_faq_left
+            array (
+                'key' => 'tab_faq_left',
+                'label' => 'Колонка слева', 
+                'type' => 'tab',
+            ),
+            array(
+                'key' => 'faq_list_left',
+                'label' => 'Вопрос - Ответ',
+                'name' => 'faq_list_left',
+                'type' => 'repeater',
+                'layout' => 'table',  // 'block' || 'row'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'faq_question',
+                        'label' => 'Вопрос',
+                        'name' => 'faq_question',
+                        'type' => 'textarea',
+                        'rows' => 2,
+                        'wrapper' => array (
+                            'width' => '40',
+                        ),
+                    ),
+                    array(
+                        'key' => 'faq_answer',
+                        'label' => 'Ответ',
+                        'name' => 'faq_answer',
+                        'type' => 'textarea',
+                        'rows' => 2,
+                        'instructions' => 'Используйте тег p для абзацев.',
+                        'wrapper' => array (
+                            'width' => '60',
+                        ),
+                    ),
+                ),
+            ),
+            // ------------------------------- tab_faq_right
+            array (
+                'key' => 'tab_faq_right',
+                'label' => 'Колонка справа', 
+                'type' => 'tab',
+            ),
+            array(
+                'key' => 'faq_list_right',
+                'label' => 'Вопрос - Ответ',
+                'name' => 'faq_list_right',
+                'type' => 'repeater',
+                'layout' => 'table',  // 'block' || 'row'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'faq_question',
+                        'label' => 'Вопрос',
+                        'name' => 'faq_question',
+                        'type' => 'textarea',
+                        'rows' => 2,
+                        'wrapper' => array (
+                            'width' => '40',
+                        ),
+                    ),
+                    array(
+                        'key' => 'faq_answer',
+                        'label' => 'Ответ',
+                        'name' => 'faq_answer',
+                        'type' => 'textarea',
+                        'rows' => 2,
+                        'instructions' => 'Используйте тег p для абзацев.',
+                        'wrapper' => array (
+                            'width' => '60',
+                        ),
+                    ),
+                ),
+            ),
+
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'template-helpcenter.php',
+                )
+            ),
+        ),
+        'menu_order' => 20,
+    ));
+    // END faq section
+    // ---------------------------------------------------------
+    // BEGIN documentation section
+    acf_add_local_field_group(array(
+        'key' => 'acf_documentation_settings',
+        'title' => 'Документация',
+        'fields' => array(
+            array(
+                'key' => 'documentation_boolean',
+                'label' => 'Отображать блок?',
+                'name' => 'documentation_boolean',
+                'type' => 'true_false',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => 'Да',
+                'ui_off_text' => 'Нет',
+            ),
+            array(
+                'key' => 'documentation_title',
+                'label' => 'Заголовок',
+                'name' => 'documentation_title',
+                'type' => 'text',
+                'default_value' => 'Документация лицензии в Минпром торг',
+            ),
+            array(
+                'key' => 'documentation_list',
+                'label' => 'Список',
+                'name' => 'documentation_list',
+                'type' => 'repeater',
+                'layout' => 'block',  // 'block' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'documentation_item',
+                        'label' => 'Заголовок',
+                        'name' => 'documentation_item',
+                        'type' => 'text',
+                        'wrapper' => array (
+                            'width' => '80',
+                        ),
+                    ),
+                    array(
+                        'key' => 'documentation_button',
+                        'label' => 'Ссылка',
+                        'name' => 'documentation_button',
+                        'type' => 'link',
+                        'return_format' => 'url',  // 'array' || 'url'
+                        'wrapper' => array (
+                            'width' => '20',
+                        ),
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'template-helpcenter.php',
+                )
+            ),
+        ),
+        'menu_order' => 30,
+    ));
+    // END documentation section
+
+
+
+    
+    // ---------------------------------------------------------
     // BEGIN test section
     acf_add_local_field_group(array(
         'key' => 'acf_test_settings',

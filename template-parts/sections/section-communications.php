@@ -28,7 +28,12 @@
             <?php } ?>
         </div>
 
-        <?php get_template_part( 'template-parts/forms/form', 'communications' ); ?>
+        <!-- begin form-->
+        <div class="communications__form">
+            <?php get_template_part( 'template-parts/forms/form', 'communications' ); ?>
+        </div>
+        <!-- end form-->
+
 
     </div>
 </section>

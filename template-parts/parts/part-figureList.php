@@ -1,4 +1,9 @@
-<?php if ( is_page_template(['template-laboratory.php']) ) { ?>
+<?php if ( 
+    
+    is_page_template(['template-laboratory.php']) ||
+    is_page_template(['template-helpcenter.php']) 
+
+) { ?>
     <ul class="figure__list">
         <li></li>
         <li></li>
