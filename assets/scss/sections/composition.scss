@@ -76,6 +76,10 @@
         .row__list {
             @media (min-width: 768px) {
                 columns: inherit;
+                display: block;
+                li {
+                    width: 100%;
+                }
             }
         }
     }

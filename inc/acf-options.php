@@ -2030,11 +2030,275 @@ function my_template_acf_mataboxes(){
         'menu_order' => 30,
     ));
     // END documentation section
-
-
-
-    
     // ---------------------------------------------------------
+
+
+
+
+    // BEGIN heading_practical section
+    acf_add_local_field_group(array(
+        'key' => 'acf_heading_practical_settings',
+        'title' => 'Настройки первого блока',
+        'fields' => array(
+            array(
+                'key' => 'heading_practical_desc',
+                'label' => 'Описание',
+                'name' => 'heading_practical_desc',
+                'type' => 'textarea',
+                'rows' => 2,
+                'instructions' => 'Используйте тег <b>p</b> для выделения абзацев',
+                'placeholder' => '<p>Абзац</p>'
+            ),
+            array(
+                'key' => 'heading_practical_img_id',
+                'label' => 'Изображение',
+                'name' => 'heading_practical_img_id',
+                'type' => 'image',
+                'return_format' => 'id',  // 'id' || 'url' || 'array'
+                'preview_size' => 'thumbnail', // (thumbnail, medium, large, full or custom size)
+                'instructions' => 'Рекомендуемое разрешение изображения не более 640/640px. Формат: .gif',
+            ),
+            array(
+                'key' => 'heading_practical_btn_white',
+                'label' => 'Белая кнопка',
+                'name' => 'heading_practical_btn_white',
+                'type' => 'link',
+                'return_format' => 'array',  // 'array' || 'url'
+            ),
+            array(
+                'key' => 'heading_practical_btn_blue',
+                'label' => 'Синяя кнопка',
+                'name' => 'heading_practical_btn_blue',
+                'type' => 'link',
+                'return_format' => 'array',  // 'array' || 'url'
+            ),
+            array(
+                'key' => 'heading_practical_list',
+                'label' => 'Смотреть другие практикумы:',
+                'name' => 'heading_practical_list',
+                'type' => 'repeater',
+                'layout' => 'table',  // 'block' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'heading_practical_icon',
+                        'label' => 'Иконка',
+                        'name' => 'heading_practical_icon',
+                        'type' => 'select',
+                        'allow_null' => 1,
+                        'multiple' => 0,
+                        'ui' => 1,
+                        'return_format' => 'value',  // 'array' || 'label'
+                        'choices' => [
+                            'icon_physics' => 'Физика',   
+                            'icon_maths' => 'Математика',   
+                            'icon_chemistry' => 'Химия',   
+                            'icon_biology' => 'Биология',   
+                            'icon_geography' => 'География',   
+                            'icon_natural_science' => 'Естествознание',   
+                            'icon_ecology' => 'Экология',   
+                            'icon_obj' => 'ОБЖ',   
+                            'icon_world' => 'Окружающий мир',   
+                            'icon_nanotechnology' => 'Нанотехнологии',   
+                            'icon_baby' => 'Дошкольного образования',   
+                            'icon_engineering' => 'Основы тех. и ин.',   
+                            'icon_astronomy' => 'Астрономия',   
+                            'icon_history' => 'История и Археология',   
+                            'icon_physical' => 'Физическая культура',
+                        ],
+                        'default_value' => 'icon_physics',
+                    ),
+                    array(
+                        'key' => 'heading_practical_label',
+                        'label' => 'Текст',
+                        'name' => 'heading_practical_label',
+                        'type' => 'text',
+                    ),
+                    array(
+                        'key' => 'heading_practical_link',
+                        'label' => 'Ссылка',
+                        'name' => 'heading_practical_link',
+                        'type' => 'text',
+                    ),
+                ),
+            ),
+
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'template-practical.php',
+                ),
+            ),
+        ),
+        'menu_order' => 1,
+    ));
+    // END heading_practical section
+    // ---------------------------------------------------------
+    // BEGIN composition section
+    acf_add_local_field_group(array(
+        'key' => 'acf_composition_settings',
+        'title' => 'Состав',
+        'fields' => array(
+            array(
+                'key' => 'composition_title',
+                'label' => 'Заголовок',
+                'name' => 'composition_title',
+                'type' => 'text',
+                'instructions' => 'Для переноса строки используйте тег br.',
+
+            ),
+            array(
+                'key' => 'composition_desc',
+                'label' => 'Описание',
+                'name' => 'composition_desc',
+                'type' => 'textarea',
+                'rows' => 2,
+            ),
+            // ------------------------------- tab_composition_imgs composition_imgs
+            array (
+                'key' => 'tab_composition_imgs',
+                'label' => 'Галерея', 
+                'type' => 'tab',
+            ),
+            array(
+                'key' => 'composition_imgs_list',
+                'label' => 'Изображения',
+                'name' => 'composition_imgs_list',
+                'type' => 'repeater',
+                'layout' => 'table',  // 'block' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'composition_img_id',
+                        'label' => 'Изображение',
+                        'name' => 'composition_img_id',
+                        'type' => 'image',
+                        'return_format' => 'id',  // 'id' || 'url' || 'array'
+                        'preview_size' => 'thumbnail', // (thumbnail, medium, large, full or custom size)
+                        'instructions' => 'Рекомендуемое разрешение изображения не более 700/700px.',
+                    ),
+
+                ),
+            ),
+            // ------------------------------- tab_composition_equipment composition_equipment
+            array (
+                'key' => 'tab_composition_equipment',
+                'label' => 'Комплектация', 
+                'type' => 'tab',
+            ),
+            array(
+                'key' => 'composition_equipment_boolean',
+                'label' => 'Отображать таб?',
+                'name' => 'composition_equipment_boolean',
+                'type' => 'true_false',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => 'Да',
+                'ui_off_text' => 'Нет',
+            ),
+            array(
+                'key' => 'composition_equipment_list',
+                'label' => 'Список',
+                'name' => 'composition_equipment_list',
+                'type' => 'repeater',
+                'layout' => 'table',  // 'block' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'list_item',
+                        'label' => 'Элемент списка',
+                        'name' => 'list_item',
+                        'type' => 'text',
+                    ),
+                ),
+            ),
+            // ------------------------------- tab_composition_more composition_more
+            array (
+                'key' => 'tab_composition_more',
+                'label' => 'Дополнительное оборудование', 
+                'type' => 'tab',
+            ),
+            array(
+                'key' => 'composition_more_boolean',
+                'label' => 'Отображать таб?',
+                'name' => 'composition_more_boolean',
+                'type' => 'true_false',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => 'Да',
+                'ui_off_text' => 'Нет',
+            ),
+            array(
+                'key' => 'composition_more_list',
+                'label' => 'Список',
+                'name' => 'composition_more_list',
+                'type' => 'repeater',
+                'layout' => 'table',  // 'block' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'list_item',
+                        'label' => 'Элемент списка',
+                        'name' => 'list_item',
+                        'type' => 'text',
+                    ),
+                ),
+            ),
+            // ------------------------------- tab_composition_documentation composition_documentation
+            array (
+                'key' => 'tab_composition_documentation',
+                'label' => 'Документация', 
+                'type' => 'tab',
+            ),
+            array(
+                'key' => 'composition_documentation_boolean',
+                'label' => 'Отображать таб?',
+                'name' => 'composition_documentation_boolean',
+                'type' => 'true_false',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => 'Да',
+                'ui_off_text' => 'Нет',
+            ),
+            array(
+                'key' => 'composition_documentation_list',
+                'label' => 'Список',
+                'name' => 'composition_documentation_list',
+                'type' => 'repeater',
+                'layout' => 'table',  // 'block' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'composition_documentation_link',
+                        'label' => 'Ссылка',
+                        'name' => 'composition_documentation_link',
+                        'type' => 'link',
+                        'return_format' => 'array',  // 'array' || 'url'
+                    ),
+        
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'template-practical.php',
+                )
+            ),
+        ),
+        'menu_order' => 10,
+    ));
+    // END composition section
+    // ---------------------------------------------------------
+
+
+
+
     // BEGIN test section
     acf_add_local_field_group(array(
         'key' => 'acf_test_settings',

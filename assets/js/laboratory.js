@@ -4,7 +4,7 @@ $(document).ready(function() {
     function initLabImage() {
         let preview1 = bodymovin.loadAnimation({
             container: document.getElementById('preview1'), // Required
-            path: '../json/preview1.json', // Required
+            path: '/wp-content/themes/robiclab/assets/json/preview1.json', // Required
             renderer: 'svg', // Required
             loop: false, // Optional
             // autoplay: false, // Optional
@@ -13,7 +13,7 @@ $(document).ready(function() {
         })
         let preview2 = bodymovin.loadAnimation({
             container: document.getElementById('preview2'), // Required
-            path: '../json/preview2.json', // Required
+            path: '/wp-content/themes/robiclab/assets/json/preview2.json', // Required
             renderer: 'svg', // Required
             loop: false, // Optional
             autoplay: false, // Optional
@@ -21,7 +21,7 @@ $(document).ready(function() {
         })
         let preview3 = bodymovin.loadAnimation({
             container: document.getElementById('preview3'), // Required
-            path: '../json/preview3.json', // Required
+            path: '/wp-content/themes/robiclab/assets/json/preview3.json', // Required
             renderer: 'svg', // Required
             loop: false, // Optional
             autoplay: false, // Optional
@@ -29,7 +29,7 @@ $(document).ready(function() {
         })
         let preview4 = bodymovin.loadAnimation({
             container: document.getElementById('preview4'), // Required
-            path: '../json/preview4.json', // Required
+            path: '/wp-content/themes/robiclab/assets/json/preview4.json', // Required
             renderer: 'svg', // Required
             loop: false, // Optional
             autoplay: false, // Optional
@@ -37,7 +37,7 @@ $(document).ready(function() {
         })
         let preview5 = bodymovin.loadAnimation({
             container: document.getElementById('preview5'), // Required
-            path: '../json/preview5.json', // Required
+            path: '/wp-content/themes/robiclab/assets/json/preview5.json', // Required
             renderer: 'svg', // Required
             loop: false, // Optional
             autoplay: false, // Optional
@@ -45,7 +45,7 @@ $(document).ready(function() {
         })
         let preview6 = bodymovin.loadAnimation({
             container: document.getElementById('preview6'), // Required
-            path: '../json/preview6.json', // Required
+            path: '/wp-content/themes/robiclab/assets/json/preview6.json', // Required
             renderer: 'svg', // Required
             loop: false, // Optional
             autoplay: false, // Optional
@@ -53,7 +53,7 @@ $(document).ready(function() {
         })
         let preview7 = bodymovin.loadAnimation({
             container: document.getElementById('preview7'), // Required
-            path: '../json/preview7.json', // Required
+            path: '/wp-content/themes/robiclab/assets/json/preview7.json', // Required
             renderer: 'svg', // Required
             loop: false, // Optional
             autoplay: false, // Optional
