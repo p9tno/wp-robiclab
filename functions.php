@@ -19,7 +19,7 @@ function robiclab_scripts() {
 
 	wp_enqueue_script( 'robiclab-ajax-search', get_template_directory_uri() . '/assets/js/ajax-search.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'robiclab-aos', get_template_directory_uri() . '/assets/js/aos.js', array(), _S_VERSION, true );
-	// wp_enqueue_script( 'robiclab-form', get_template_directory_uri() . '/assets/js/form.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'robiclab-form', get_template_directory_uri() . '/assets/js/form.js', array(), _S_VERSION, true );
 	// wp_enqueue_script( 'robiclab-event-move', get_template_directory_uri() . '/assets/js/jquery.event.move.js', array('jquery'), _S_VERSION, true );
 	wp_enqueue_script( 'robiclab-masked-input', get_template_directory_uri() . '/assets/js/jquery.maskedinput.min.js', array(), _S_VERSION, true );
 
@@ -163,7 +163,7 @@ function remove_menus() {
     // remove_menu_page('users.php');                # Пользователи 
     // remove_menu_page('tools.php');                # Инструменты 
     //remove_menu_page('options-general.php');      # Параметры 
-    // remove_menu_page('edit.php?post_type=smart-custom-fields'); # ACF smart-custom-fields
+    remove_menu_page('edit.php?post_type=acf-field-group'); # ACF smart-custom-fields
 }
 
 

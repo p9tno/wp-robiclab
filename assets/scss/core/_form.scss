@@ -156,6 +156,13 @@
 			min-height: 100%;
 			resize: vertical;
 		}
+		&.invalid {
+			.form__label {
+				span {
+					color: rgba($color_danger, 1);
+				}
+			}
+		}
 
 	}
 
@@ -250,7 +257,7 @@
 		}
 
 		&.invalid {
-			background-color: rgba($color_white, 0.2);
+			// background-color: rgba($color_white, 0.2);
 			border: 0.0625em solid red;
 		}
 		// Placeholder for input +++++++++++++++

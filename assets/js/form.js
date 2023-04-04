@@ -1,6 +1,6 @@
 // ФОРМА
 function submitForm() {
-    let modal = $('#modalinfo');
+    let modal = $('#info');
     let message = modal.find('.form__message');
 
     modal.on('hidden.bs.modal', function (e) {
@@ -16,6 +16,7 @@ function submitForm() {
     $('[type=submit]').on('click tab', function (e) {
         e.preventDefault();
         let form = $(this).closest('.form');
+        let row = form.find('.form__row');
         let notspam = form.find('[name="notspam"]');
         notspam.val('Not spam');
         let fields = form.find('[required]');
@@ -25,16 +26,19 @@ function submitForm() {
 
         fields.each(function (index, el) {
             if ($(this).val() === '') {
-                $(this).addClass('invalid');
+                $(this).closest('.form__row').addClass('invalid');
+                // $(this).addClass('invalid');
                 empty++;
             } else {
-                $(this).removeClass('invalid');
+                // $(this).removeClass('invalid');
+                $(this).closest('.form__row').removeClass('invalid');
             }
         });
 
         setTimeout(function () {
-            fields.removeClass('invalid');
-        }, 1500);
+            row.removeClass('invalid');
+            // fields.removeClass('invalid');
+        }, 2500);
 
 
         if (empty === 0) {

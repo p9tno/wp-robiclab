@@ -638,6 +638,25 @@
             }
         }
     }
+
+    // ---------------------- sitemap-search
+    .wsp-pages-title {
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 1.25em;
+        font-size: 1.75em;
+        color: $color_white;
+    }
+
+    .page_item {
+        a {
+            color: $color_dark_text;
+            &:before {
+                background-color: $color_dark_text;
+    
+            }
+        }
+    }
     
 
 

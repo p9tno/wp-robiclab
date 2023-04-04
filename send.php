@@ -17,8 +17,9 @@ $subject = $_POST['subject'];
 $userTel  = $_POST['tel'];
 $userName  = $_POST['name'];
 $userMessage = $_POST['message'];
+$userEmail = $_POST['email'];
 $page = $_POST['page'];
-$totalcost = $_POST['totalcost'];
+// $totalcost = $_POST['totalcost'];
 
 if ($notspam == 'Not spam') {
 } else {
@@ -47,9 +48,9 @@ if ($userMessage) {
     Собщение : ' . $userMessage;
 }
 
-if ($totalcost) {
+if ($userEmail) {
     $message .= '<br>
-    Стоимость работ : ' . $totalcost . ' РУБ.';
+    Электронная почта : ' . $userEmail;
 }
 
 if ($page) {
@@ -59,7 +60,7 @@ if ($page) {
 
 
 $headers = "Content-type: text/html; charset=utf-8 \r\n"; //Кодировка письма
-$headers .= "From: ДанСтрой <info@danstroy.com >\r\n"; //Наименование и почта отправителя
+$headers .= "From: RobicLab <info@robiclab.com >\r\n"; //Наименование и почта отправителя
 
 if (mail($to, $subject, $message, $headers)) {
     // mail($userEmail, $subject, $message_2, $headers);

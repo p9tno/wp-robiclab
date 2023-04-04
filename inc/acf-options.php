@@ -143,22 +143,6 @@ function my_template_acf_mataboxes(){
                 'type' => 'textarea',
                 'rows'  => 20,
             ),
-            // ------------------------------- switch
-            array (
-                'key' => 'tab_switch',
-                'label' => 'Переключатель', 
-                'type' => 'tab',
-            ),
-            array(
-                'key' => 'switch_boolean',
-                'label' => 'Отображать блок переключатель языка?',
-                'name' => 'switch_boolean',
-                'type' => 'true_false',
-                'default_value' => 1,
-                'ui' => 1,
-                'ui_on_text' => 'Да',
-                'ui_off_text' => 'Нет',
-            ),
             // ------------------------------- nav_links
             array (
                 'key' => 'tab_nav_links',
@@ -218,22 +202,21 @@ function my_template_acf_mataboxes(){
                 'type' => 'tab',
             ),
             array(
-                'key' => 'footer_links_list',
-                'label' => 'Список',
-                'name' => 'footer_links_list',
-                'type' => 'repeater',
-                'layout' => 'table',  // 'block' || 'row' || 'table'
-                'max' => 2,
-                'button_label' => 'Добавить',
-                'sub_fields' => array(
-                    array(
-                        'key' => 'footer_link',
-                        'label' => 'Ссылка',
-                        'name' => 'footer_link',
-                        'type' => 'link',
-                        'return_format' => 'array',  // 'array' || 'url'
-                    ),
-                ),
+                'key' => 'boolean_footer_policy',
+                'label' => 'Отображать блок? (Политика конфендициальности)',
+                'name' => 'boolean_footer_policy',
+                'type' => 'true_false',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => 'Да',
+                'ui_off_text' => 'Нет',
+            ),
+            array(
+                'key' => 'footer_link_map',
+                'label' => 'Карта сайта',
+                'name' => 'footer_link_map',
+                'type' => 'link',
+                'return_format' => 'array',  // 'array' || 'url'
             ),
             array(
                 'key' => 'boolean_footer_links',
@@ -280,39 +263,17 @@ function my_template_acf_mataboxes(){
                 'ui_on_text' => 'Да',
                 'ui_off_text' => 'Нет',
             ),
-            // ------------------------------- 404
-            array (
-                'key' => 'tab_content_404',
-                'label' => 'Страница 404', 
-                'type' => 'tab',
-            ),
-            array(
-                'key' => '404_title',
-                'label' => 'Заголовок',
-                'name' => '404_title',
-                'type' => 'text',
-                'instructions' => 'Используйте тег b для выделения жирного контента. Для переноса строки используйте тег br. Тег i для выделения другим цветом',
-            ),
-            array(
-                'key' => '404_subtitle',
-                'label' => 'Подзаголовок',
-                'name' => '404_subtitle',
-                'type' => 'text',
-            ),
-            array(
-                'key' => '404_img_id',
-                'label' => 'Фоновое изображение блока',
-                'name' => '404_img_id',
-                'type' => 'image',
-                'return_format' => 'id',  // 'id' || 'url'
-                'preview_size' => 'thumbnail',
-                'instructions' => 'Рекомендуемое разрешение изображения 1920/1080px.',
-            ),
             // ------------------------------- privacy
             array (
                 'key' => 'tab_content_privacy',
                 'label' => 'Политика конфиденциальности', 
                 'type' => 'tab',
+            ),
+            array(
+                'key' => 'privacy_title',
+                'label' => 'Заголовок',
+                'name' => 'privacy_title',
+                'type' => 'text',
             ),
             array(
                 'key' => 'privacy_content',
