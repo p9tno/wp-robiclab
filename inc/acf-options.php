@@ -417,8 +417,8 @@ function my_template_acf_mataboxes(){
                     <li>Bottle</li>
                     <li>Book</li>
                     <li>Counter</li>
-                    <li>test</li>
-                    <li>test2</li>
+                    <li>Atom</li>
+                    <li>Rain</li>
                 </ol>',
                 'new_lines' => 'wpautop',
                 'esc_html' => 0,

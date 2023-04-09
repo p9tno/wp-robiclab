@@ -22,11 +22,12 @@
         <div class="table__label mobile"><span>В комплекте</span></div>
         <?php 
         $items = get_field('base_included_list');
-        $count = count($items);
+        
         if( $items ) { ?>
             <div class="table__list">
                 <span>
                     <?php
+                        $count = count($items);
                         $i = 1; foreach( $items as $item ) {
                             if ($i == $count) { echo $item['item']; }
                             else { echo $item['item'] . ', '; }
@@ -43,11 +44,12 @@
         <div class="table__label mobile"><span>Дополнительная комплектация</span></div>
         <?php 
         $rows = get_field('base_list');
-        $count = count($rows);
+       
         if( $rows ) { ?>
             <div class="table__list">
                 <span>
                     <?php
+                        $count = count($rows);
                         $i = 1; foreach( $rows as $row ) {
                             if ($i == $count) { echo $row['item']; }
                             else { echo $row['item'] . ', '; }
