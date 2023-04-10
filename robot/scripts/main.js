@@ -2,15 +2,15 @@ $(document).ready(function() {
 
     function initRobotDesctop () {
         // let slider_services = null;
-        let mediaQuerySize = 1200;
+        let mediaQuerySize = 768;
 
         $(window).on('load resize', function () {
             let windowWidth = $(this).innerWidth();
             if (windowWidth >= mediaQuerySize) {
-                console.log('init');
+                // console.log('init robot');
                 initRobotAnimations();
             } else {
-                console.log('destroy');
+                // console.log('destroy robot');
             }
         });
     }
