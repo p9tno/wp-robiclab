@@ -1065,7 +1065,6 @@ function my_template_acf_mataboxes(){
                     ),
                 ),
             ),
-
             array(
                 'key' => 'base_included_list',
                 'label' => 'В комплекте',
