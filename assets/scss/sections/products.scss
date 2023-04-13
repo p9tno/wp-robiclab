@@ -83,6 +83,18 @@
             }
 
         }
+
+        &_disable {
+            background-image: url("../img/star_disable.svg");
+            pointer-events: none;
+            .products__icon {
+                color: $color_dark;
+            }
+
+            .products__label {
+                color: $color_dark;
+            }
+        }
     }
 
     &__icon {

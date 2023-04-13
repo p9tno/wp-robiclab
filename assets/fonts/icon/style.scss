@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?to3v5s');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?to3v5s#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?to3v5s') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?to3v5s') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?to3v5s##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?553par');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?553par#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?553par') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?553par') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?553par##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -35,6 +35,11 @@
 .icon_compare {
   &:before {
     content: $icon_compare; 
+  }
+}
+.icon_compare2 {
+  &:before {
+    content: $icon_compare2; 
   }
 }
 .icon_check_mark {
@@ -225,6 +230,16 @@
 .icon_slider_right {
   &:before {
     content: $icon_slider_right; 
+  }
+}
+.icon_slider_top {
+  &:before {
+    content: $icon_slider_top; 
+  }
+}
+.icon_slider_bottom {
+  &:before {
+    content: $icon_slider_bottom; 
   }
 }
 .icon_sun {

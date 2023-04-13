@@ -378,10 +378,10 @@ $(document).ready(function() {
 
             $( '.videoModal_js' ).on( 'click', function () {
                 $('#modalVideo').modal('show');
-                console.log('click');
+                // console.log('click');
 
                 let src = $(this).attr('data-src');
-                console.log(src);
+                // console.log(src);
 
 
                 // https://videojs.com/
@@ -396,7 +396,53 @@ $(document).ready(function() {
             } );
         }
     };
+
     uploaVideoForModal();
+
+    function uploaVideoForModalGoogle() {
+        if ( $( ".videoModal_google_js" ) ) {
+
+            $( '.videoModal_google_js' ).on( 'click', function () {
+                $('#modalVideo').modal('show');
+                console.log('click');
+
+                let src = $(this).attr('data-src');
+                console.log(src);
+
+
+                // https://videojs.com/   ?autoplay=1
+                // let video = $(`<video id="my-video" class="video-js" autoplay controls preload="auto"><source src="${src}" type="video/mp4" /></video>`)
+
+                let video = $(`<iframe src="${src}preview" width="100%" height="100%" allow="autoplay"></iframe>`)
+
+                $(".modalVideo__wraper").append(video);
+
+                $("#modalVideo").on('hide.bs.modal', function () {
+                    $(".modalVideo__wraper").html('');
+                });
+
+            } );
+        }
+    };
+    uploaVideoForModalGoogle();
+
+    function doDrop() {
+        $('.drop__toggle').on('click', function() {
+            $('.drop__toggle').not(this).removeClass('active');
+            $('.drop__toggle').not(this).closest('.drop').find('.drop__list').removeClass('open');
+            $(this).toggleClass('active');
+            $(this).closest('.drop').find('.drop__list').toggleClass('open');
+        });
+
+        $(document).mouseup(function (e) {
+            let div = $(".drop__toggle");
+            if (!div.is(e.target) && div.has(e.target).length === 0) {
+                div.removeClass('active');
+                div.closest('.drop').find('.drop__list').removeClass('open');
+            }
+        });
+    };
+    doDrop();
 
 
     $(function(){

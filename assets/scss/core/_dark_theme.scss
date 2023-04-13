@@ -310,6 +310,7 @@
             &_sensors {
                 .equipment__item {
                     background-color: $color_dark_bg;
+                    box-shadow: 0 3px 5px rgba($color_dark_bg, 0.45);
                 }
             }
 
@@ -329,6 +330,26 @@
             &:before {
                 color: $color_white;
             }
+        }
+    }
+
+    .drop {
+        position: relative;
+        cursor: pointer;
+
+        .drop__toggle {
+            box-shadow: 0 3px 5px rgba($color_dark_bg, 0.45);
+            background-color: $color_dark_bg;
+
+            &:after {
+                color: rgba($color_dark_text, 0.6);
+            }
+
+        }
+
+        &__list {
+            background-color: darken($color_dark_bg, 2%);
+            box-shadow: 0 3px 5px rgba($color_dark_bg, 0.45);
         }
     }
 

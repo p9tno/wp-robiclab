@@ -24,14 +24,21 @@ if( $rows ) { ?>
                         <span class="tab">Базовая</span>
                         <span class="tab">Стандартная</span>
                         <span class="tab">Профильная</span>
-                        <span class="tab tab_danger">Точка роста</span>
+
+                        <?php if (get_field('equipment_dot_boolean')) { ?>
+                            <span class="tab tab_danger">Точка роста</span>
+                        <?php } ?>
+                        
                     </div>
 
                     <div class="tabs-content">
                         <?php get_template_part( 'template-parts/tabs/tab', 'base' ); ?>
                         <?php get_template_part( 'template-parts/tabs/tab', 'standard' ); ?>
                         <?php get_template_part( 'template-parts/tabs/tab', 'profile' ); ?>
-                        <?php get_template_part( 'template-parts/tabs/tab', 'dot' ); ?>
+
+                        <?php if (get_field('equipment_dot_boolean')) { ?>
+                            <?php get_template_part( 'template-parts/tabs/tab', 'dot' ); ?>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

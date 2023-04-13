@@ -15,7 +15,8 @@
                         <div class="table__head">
                             <div class="table__row">
                                 <div class="table__col"><span>Комплектация</span></div>
-                                <div class="table__col"><span>Набор цифровых датчиков</span></div>
+                                <div class="table__col"><span>Одиночные датчики</span></div>
+                                <div class="table__col"><span>Мультидатчики</span></div>
                                 <div class="table__col"><span>В комплекте</span></div>
                                 <div class="table__col"><span>Дополнительная комплектация</span></div>
                             </div>

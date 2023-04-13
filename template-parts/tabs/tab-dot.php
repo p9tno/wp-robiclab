@@ -18,6 +18,32 @@
         <?php } ?>
 
         <?php 
+        $multisensor = get_field('dot_multisensor_list');
+        if( $multisensor ) { ?>
+            <!-- start equipment__row_multisenso r-->
+            <div class="equipment__row equipment__row_multisensor">
+                <div class="equipment__label"><span>Мультидатчики</span></div>
+                <ul class="equipment__list equipment__list_multisensor drop__wrapper">
+                    <?php foreach( $multisensor as $sensor ) { ?>
+                        <li class="equipment__item drop">
+                            <div class="drop__toggle"> <span><?php echo $sensor['item']; ?></span></div>
+                            <?php 
+                            $drop_list = $sensor['drop_list'];
+                            if( $drop_list ) { ?>
+                                <div class="drop__list">
+                                    <?php foreach( $drop_list as $drop_item ) { ?>
+                                        <div class="drop__item"><span><?php echo $drop_item['drop_item']; ?></span></div>
+                                    <?php } ?>
+                                </div>
+                            <?php } ?>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </div>
+            <!-- end equipment__row_multisensor -->
+        <?php } ?>
+
+        <?php 
         $items = get_field('dot_included_list');
         if( $items ) { ?>
             <!-- start equipment__list_included-->

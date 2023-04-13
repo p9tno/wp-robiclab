@@ -813,16 +813,25 @@ function my_template_acf_mataboxes(){
                 'layout' => 'table',  // 'block' || 'row' || 'table'
                 'max' => 15,
                 'button_label' => 'Добавить',
-                'sub_fields' => array(
+                'sub_fields' => array (
                     array(
-                        'key' => 'boolean_products',
-                        'label' => 'Светлый фон?',
-                        'name' => 'boolean_products',
-                        'type' => 'true_false',
-                        'default_value' => 0,
+                        'key' => 'products_select',
+                        'label' => 'Выбор',
+                        'name' => 'products_select',
+                        'type' => 'select',
+                        'allow_null' => 0,
+                        'multiple' => 0,
                         'ui' => 1,
-                        'ui_on_text' => 'Да',
-                        'ui_off_text' => 'Нет',
+                        'return_format' => 'value',  // 'array' || 'label'
+                        'choices' => [
+                            'products__item_blue ' => 'Синий',   
+                            'products__item_light' => 'Светлый',
+                            'products__item_disable' => 'Отключить',
+                        ],
+                        'default_value' => 'products__item_blue',
+                        // 'wrapper' => array (
+                        //     'width' => '20',
+                        // ),
                     ),
                     array(
                         'key' => 'products_icon',
@@ -1019,6 +1028,45 @@ function my_template_acf_mataboxes(){
                 ),
             ),
             array(
+                'key' => 'base_multisensor_list',
+                'label' => 'Набор цифровых мультидатчики датчиков:',
+                'name' => 'base_multisensor_list',
+                'type' => 'repeater',
+                'layout' => 'table',  // 'row' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'item',
+                        'label' => 'Мультидатчик',
+                        'name' => 'item',
+                        'type' => 'text',
+                        'wrapper' => array (
+                            'width' => '30',
+                        ),
+                    ),
+                    array(
+                        'key' => 'drop_list',
+                        'label' => 'Датчики',
+                        'name' => 'drop_list',
+                        'type' => 'repeater',
+                        'layout' => 'table',  // 'block' || 'row' || 'table'
+                        'button_label' => 'Добавить',
+                        'wrapper' => array (
+                            'width' => '70',
+                        ),
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'drop_item',
+                                'label' => 'Датчик',
+                                'name' => 'drop_item',
+                                'type' => 'text',
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+
+            array(
                 'key' => 'base_included_list',
                 'label' => 'В комплекте',
                 'name' => 'base_included_list',
@@ -1102,6 +1150,44 @@ function my_template_acf_mataboxes(){
                         'label' => 'Элемент',
                         'name' => 'item',
                         'type' => 'text',
+                    ),
+                ),
+            ),
+            array(
+                'key' => 'standard_multisensor_list',
+                'label' => 'Набор цифровых мультидатчики датчиков:',
+                'name' => 'standard_multisensor_list',
+                'type' => 'repeater',
+                'layout' => 'table',  // 'row' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'item',
+                        'label' => 'Мультидатчик',
+                        'name' => 'item',
+                        'type' => 'text',
+                        'wrapper' => array (
+                            'width' => '30',
+                        ),
+                    ),
+                    array(
+                        'key' => 'drop_list',
+                        'label' => 'Датчики',
+                        'name' => 'drop_list',
+                        'type' => 'repeater',
+                        'layout' => 'table',  // 'block' || 'row' || 'table'
+                        'button_label' => 'Добавить',
+                        'wrapper' => array (
+                            'width' => '70',
+                        ),
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'drop_item',
+                                'label' => 'Датчик',
+                                'name' => 'drop_item',
+                                'type' => 'text',
+                            ),
+                        ),
                     ),
                 ),
             ),
@@ -1193,6 +1279,44 @@ function my_template_acf_mataboxes(){
                 ),
             ),
             array(
+                'key' => 'profile_multisensor_list',
+                'label' => 'Набор цифровых мультидатчики датчиков:',
+                'name' => 'profile_multisensor_list',
+                'type' => 'repeater',
+                'layout' => 'table',  // 'row' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'item',
+                        'label' => 'Мультидатчик',
+                        'name' => 'item',
+                        'type' => 'text',
+                        'wrapper' => array (
+                            'width' => '30',
+                        ),
+                    ),
+                    array(
+                        'key' => 'drop_list',
+                        'label' => 'Датчики',
+                        'name' => 'drop_list',
+                        'type' => 'repeater',
+                        'layout' => 'table',  // 'block' || 'row' || 'table'
+                        'button_label' => 'Добавить',
+                        'wrapper' => array (
+                            'width' => '70',
+                        ),
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'drop_item',
+                                'label' => 'Датчик',
+                                'name' => 'drop_item',
+                                'type' => 'text',
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+            array(
                 'key' => 'profile_included_list',
                 'label' => 'В комплекте',
                 'name' => 'profile_included_list',
@@ -1264,6 +1388,16 @@ function my_template_acf_mataboxes(){
                 'type' => 'tab',
             ),
             array(
+                'key' => 'equipment_dot_boolean',
+                'label' => 'Отображать таб?',
+                'name' => 'equipment_dot_boolean',
+                'type' => 'true_false',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => 'Да',
+                'ui_off_text' => 'Нет',
+            ),
+            array(
                 'key' => 'dot_sensors_list',
                 'label' => 'Набор цифровых датчиков:',
                 'name' => 'dot_sensors_list',
@@ -1276,6 +1410,44 @@ function my_template_acf_mataboxes(){
                         'label' => 'Элемент',
                         'name' => 'item',
                         'type' => 'text',
+                    ),
+                ),
+            ),
+            array(
+                'key' => 'dot_multisensor_list',
+                'label' => 'Набор цифровых мультидатчики датчиков:',
+                'name' => 'dot_multisensor_list',
+                'type' => 'repeater',
+                'layout' => 'table',  // 'row' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'item',
+                        'label' => 'Мультидатчик',
+                        'name' => 'item',
+                        'type' => 'text',
+                        'wrapper' => array (
+                            'width' => '30',
+                        ),
+                    ),
+                    array(
+                        'key' => 'drop_list',
+                        'label' => 'Датчики',
+                        'name' => 'drop_list',
+                        'type' => 'repeater',
+                        'layout' => 'table',  // 'block' || 'row' || 'table'
+                        'button_label' => 'Добавить',
+                        'wrapper' => array (
+                            'width' => '70',
+                        ),
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'drop_item',
+                                'label' => 'Датчик',
+                                'name' => 'drop_item',
+                                'type' => 'text',
+                            ),
+                        ),
                     ),
                 ),
             ),
@@ -2368,16 +2540,66 @@ function my_template_acf_mataboxes(){
                 ),
             ),
             array(
+                'key' => 'select_video_src',
+                'label' => 'Выбирете источник видео:',
+                'name' => 'select_video_src',
+                'type' => 'radio',
+                'choices' => array(
+                    'wp' => 'Wordpress',
+                    'google' => 'Google диск',
+                    // 'yandex' => 'Yandex диск',
+                ),
+                'layout' => 'horizontal',
+                'return_format' => 'value',
+            ),
+            array(
                 'key' => 'video_src',
-                'label' => 'Ссылка на видео',
+                'label' => 'Ссылка на видео <i>Wordpress</i>',
                 'name' => 'video_src',
                 'type' => 'text',
-                'instructions' => 'Формат mp4',
-                'required' => 1,
-                'wrapper' => array (
-                    'width' => '50',
+                'instructions' => 'Формат mp4, скопируйте ссылку из медиафайлов и вставьте. <br>Примерссылки: <i>/wp-content/uploads/2023/03/video_1.mp4</i>',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'select_video_src',
+                            'operator' => '==',
+                            'value' => 'wp',
+                        ),
+                    ),
                 ),
             ),
+            array(
+                'key' => 'google_src',
+                'label' => 'Ссылка на видео из <i>Google диска</i>',
+                'name' => 'google_src',
+                'type' => 'text',
+                'instructions' => 'Скопируйте ссылку из google диска и вставьте. Должен быть открыт доступ по ссылки у вставляемого файла.<br>На конце удаляем из ссылки <b>/view</b><br> Пример ссылки: <i>https://drive.google.com/file/d/1mefOUEHT5nM0-bUCUoVN2r8CzvY7A8hl/</i>',
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'select_video_src',
+                            'operator' => '==',
+                            'value' => 'google',
+                        ),
+                    ),
+                ),
+            ),
+            // array(
+            //     'key' => 'yandex_src',
+            //     'label' => 'Ссылка на видео из <i>Yandex диска</i>',
+            //     'name' => 'yandex_src',
+            //     'type' => 'text',
+            //     // 'instructions' => 'Скопируйте ссылку из google диска и вставьте. Должен быть открыт доступ по ссылки у вставляемого файла.',
+            //     'conditional_logic' => array(
+            //         array(
+            //             array(
+            //                 'field' => 'select_video_src',
+            //                 'operator' => '==',
+            //                 'value' => 'yandex',
+            //             ),
+            //         ),
+            //     ),
+            // ),
         ),
         'location' => array(
             array(

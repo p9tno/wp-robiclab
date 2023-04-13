@@ -11,7 +11,7 @@
     
                 <div class="products__list">
                     <?php foreach( $rows as $row ) { ?>
-                        <a class="products__item <?php if($row['boolean_products']){echo 'products__item_light';} ?>" href="<?php echo $row['products_link']; ?>">
+                        <a class="products__item <?php echo $row['products_select']; ?>" href="<?php echo $row['products_link']; ?>">
                             <div class="products__icon"><i class="<?php echo $row['products_icon']; ?>"></i></div>
                             <div class="products__label"><span><?php echo $row['products_label']; ?></span></div>
                         </a>

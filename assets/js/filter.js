@@ -111,6 +111,30 @@ $(document).ready(function() {
 
             } );
         }
+
+        if ( $( ".videoModal_google_js" ) ) {
+
+            $( '.videoModal_google_js' ).on( 'click', function () {
+                $('#modalVideo').modal('show');
+                console.log('click');
+
+                let src = $(this).attr('data-src');
+                console.log(src);
+
+
+                // https://videojs.com/   ?autoplay=1
+                // let video = $(`<video id="my-video" class="video-js" autoplay controls preload="auto"><source src="${src}" type="video/mp4" /></video>`)
+
+                let video = $(`<iframe src="${src}preview" width="100%" height="100%" allow="autoplay"></iframe>`)
+
+                $(".modalVideo__wraper").append(video);
+
+                $("#modalVideo").on('hide.bs.modal', function () {
+                    $(".modalVideo__wraper").html('');
+                });
+
+            } );
+        }
     }
     showModal();
 

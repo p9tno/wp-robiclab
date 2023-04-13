@@ -6,7 +6,7 @@
     </div>
 
     <div class="table__col">
-        <div class="table__label mobile"><span>Набор цифровых датчиков</span></div>
+        <div class="table__label mobile"><span>Одиночные датчики</span></div>
         <?php 
         $sensors = get_field('base_sensors_list');
         if( $sensors ) { ?>
@@ -17,6 +17,32 @@
             </div>
         <?php } ?>
     </div>
+
+    <!-- start equipment__row_multisenso -->
+    <div class="table__col">
+        <div class="table__label mobile"><span>Мультидатчики</span></div>
+        <?php 
+        $multisensor = get_field('base_multisensor_list');
+        if( $multisensor ) { ?>
+            <div class="table__list table__list_multisensor drop__wrapper">
+                <?php foreach( $multisensor as $sensor ) { ?>
+                    <div class="drop">
+                        <div class="drop__toggle"><span><?php echo $sensor['item']; ?></span></div>
+                        <?php 
+                        $drop_list = $sensor['drop_list'];
+                        if( $drop_list ) { ?>
+                            <div class="drop__list">
+                                <?php foreach( $drop_list as $drop_item ) { ?>
+                                    <div class="drop__item"><span><?php echo $drop_item['drop_item']; ?></span></div>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+            </div>
+        <?php } ?>
+    </div>
+    <!-- end equipment__row_multisensor -->
 
     <div class="table__col">
         <div class="table__label mobile"><span>В комплекте</span></div>

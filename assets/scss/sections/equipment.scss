@@ -87,6 +87,7 @@
             .equipment__item {
                 border-radius: 0.5625em;
                 background-color: #E7ECF5;
+                box-shadow: 0 3px 5px rgba(154, 170, 198, 0.45);
                 margin-right: 0.625em;
                 margin-bottom: 0.625em;
                 transition: 0.3s;
@@ -107,6 +108,14 @@
             }
         }
         // end sensors
+
+        // end multisensor
+        &_multisensor {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.625em;
+        }
+        // end multisensor
 
         // start included
         &_included {
@@ -249,7 +258,7 @@
 
         &:before {
             display: inline-block;
-            content: '\e924';
+            content: '\e92a';
             font-family: 'icomoon';
             font-size: 1.5em;
             color: $color_info;
@@ -264,6 +273,86 @@
 
             }
         }
+    }
+
+}
+
+.drop {
+    position: relative;
+    cursor: pointer;
+
+    .drop__toggle {
+        box-shadow: 0 3px 5px rgba(154, 170, 198, 0.45);
+        border-radius: 0.5625em;
+        background-color: #E7ECF5;
+
+        transition: 0.2s;
+        padding: 0.5em 0.75em;
+
+        &:after {
+            content: '\e92c';
+            font-family: 'icomoon';
+            color: rgba($main_color, 0.6);
+            line-height: 0.6;
+            display: inline-block;
+            margin-left: 0.5em;
+            transform: translateY(0.125em)scale(1);
+
+            transition: 0.2s;
+
+        }
+
+        @media (min-width: 768px) {
+            padding: 0.625em 1.125em;
+        }
+
+        span {
+            font-size: 0.8125em;
+            @media (min-width: 768px) {
+                font-size: 0.875em;
+
+            }
+        }
+
+        &.active {
+            border-radius: 0.625em 0.625em 0 0;
+
+            &:after {
+                transform: translateY(0.125em)scale(-1);
+            }
+        }
+    }
+
+    &__list {
+        background-color: $color_white;
+        position: absolute;
+        width: 100%;
+        box-shadow: 0 3px 5px rgba(154, 170, 198, 0.45);
+        border-radius: 0 0 0.625em 0.625em;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        top: 130%;
+        z-index: 1;
+        transition: 0.2s;
+        border-top: 0;
+
+        &.open {
+            height: auto;
+            opacity: 1;
+            top: 100%;
+            border-top: 0.125em solid rgba(#8393AF, 0.2);
+
+        }
+    }
+
+    &__item {
+        padding: 0.25em 1em;
+
+        span {
+            font-size: 0.75em;
+        }
+
     }
 
 }
