@@ -6378,6 +6378,7 @@ input[type=number] {
   .table__col {
     display: block;
     padding: 1em 0.75em;
+    flex-grow: 1;
   }
   .table__col:nth-child(1) {
     width: 12%;

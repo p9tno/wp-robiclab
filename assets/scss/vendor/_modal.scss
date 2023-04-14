@@ -215,6 +215,7 @@
         @media (min-width: 768px) {
             display: block;
             padding: 1em 0.75em;
+            flex-grow: 1;
 
             &:nth-child(1) {
                 width: 12%;
