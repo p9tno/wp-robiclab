@@ -358,15 +358,6 @@ function my_template_acf_mataboxes(){
                             'width' => '33',
                         ),
                     ),
-                    // array(
-                    //     'key' => 'download_text_m',
-                    //     'label' => 'Текст ссылки, на мобильной версии',
-                    //     'name' => 'download_text_m',
-                    //     'type' => 'text',
-                    //     'wrapper' => array (
-                    //         'width' => '30',
-                    //     ),
-                    // ),
                     array(
                         'key' => 'download_url',
                         'label' => 'Cсылка',
@@ -595,6 +586,54 @@ function my_template_acf_mataboxes(){
                 'rows' => 2,
                 'instructions' => 'Используйте тег <b>p</b> для выделения абзацев',
                 'placeholder' => '<p>Абзац</p>'
+            ),
+            array(
+                'key' => 'neuro_download_links',
+                'label' => 'Список ссылок на скачивание',
+                'name' => 'neuro_download_links',
+                'type' => 'repeater',
+                'layout' => 'table',  // 'block' || 'row' || 'table'
+                'min' => 0,
+                'max' => 3,
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'download_icon',
+                        'label' => 'Иконка',
+                        'name' => 'download_icon',
+                        'type' => 'select',
+                        'ui' => 1,
+                        'return_format' => 'value',  // 'array' || 'label'
+                        'choices' => [
+                            'icon_windows' => 'windows',   
+                            'icon_linux' => 'linux',   
+                            'icon_mac' => 'mac',   
+                        ],
+                        'default_value' => 'icon_windows',
+                        'wrapper' => array (
+                            'width' => '33',
+                        ),
+                    ),
+                    array(
+                        'key' => 'download_text',
+                        'label' => 'Текст ссылки',
+                        'name' => 'download_text',
+                        'type' => 'text',
+                        'wrapper' => array (
+                            'width' => '33',
+                        ),
+                    ),
+                    array(
+                        'key' => 'download_url',
+                        'label' => 'Cсылка',
+                        'name' => 'download_url',
+                        'type' => 'link',
+	                    'return_format' => 'url',  // 'array'
+                        'wrapper' => array (
+                            'width' => '33',
+                        ),
+                    ),
+                ),
             ),
             array(
                 'key' => 'neuro_btn_white',
@@ -1704,6 +1743,19 @@ function my_template_acf_mataboxes(){
                 'button_label' => 'Добавить',
                 'sub_fields' => array(
                     array(
+                        'key' => 'offline_row_id',
+                        'label' => 'ID РЯДА',
+                        'name' => 'offline_row_id',
+                        'type' => 'text',
+        
+                        'instructions' => 'Введите id ряда, значение должно быть уникальным. Не используйте кирилицу и цифры. Пример: "onlinewindows"<br>
+                        если навигация по якорю не нужна, оставьте это поле пустым!',
+                        'wrapper' => array (
+                            'width' => '',
+                            'class' => 'field__danger',
+                        ),
+                    ),
+                    array(
                         'key' => 'row_img_id',
                         'label' => 'Изображение',
                         'name' => 'row_img_id',
@@ -2204,56 +2256,56 @@ function my_template_acf_mataboxes(){
                 'type' => 'link',
                 'return_format' => 'array',  // 'array' || 'url'
             ),
-            array(
-                'key' => 'heading_practical_list',
-                'label' => 'Смотреть другие практикумы:',
-                'name' => 'heading_practical_list',
-                'type' => 'repeater',
-                'layout' => 'table',  // 'block' || 'row' || 'table'
-                'button_label' => 'Добавить',
-                'sub_fields' => array(
-                    array(
-                        'key' => 'heading_practical_icon',
-                        'label' => 'Иконка',
-                        'name' => 'heading_practical_icon',
-                        'type' => 'select',
-                        'allow_null' => 1,
-                        'multiple' => 0,
-                        'ui' => 1,
-                        'return_format' => 'value',  // 'array' || 'label'
-                        'choices' => [
-                            'icon_physics' => 'Физика',   
-                            'icon_maths' => 'Математика',   
-                            'icon_chemistry' => 'Химия',   
-                            'icon_biology' => 'Биология',   
-                            'icon_geography' => 'География',   
-                            'icon_natural_science' => 'Естествознание',   
-                            'icon_ecology' => 'Экология',   
-                            'icon_obj' => 'ОБЖ',   
-                            'icon_world' => 'Окружающий мир',   
-                            'icon_nanotechnology' => 'Нанотехнологии',   
-                            'icon_baby' => 'Дошкольного образования',   
-                            'icon_engineering' => 'Основы тех. и ин.',   
-                            'icon_astronomy' => 'Астрономия',   
-                            'icon_history' => 'История и Археология',   
-                            'icon_physical' => 'Физическая культура',
-                        ],
-                        'default_value' => 'icon_physics',
-                    ),
-                    array(
-                        'key' => 'heading_practical_label',
-                        'label' => 'Текст',
-                        'name' => 'heading_practical_label',
-                        'type' => 'text',
-                    ),
-                    array(
-                        'key' => 'heading_practical_link',
-                        'label' => 'Ссылка',
-                        'name' => 'heading_practical_link',
-                        'type' => 'text',
-                    ),
-                ),
-            ),
+            // array(
+            //     'key' => 'heading_practical_list',
+            //     'label' => 'Смотреть другие практикумы:',
+            //     'name' => 'heading_practical_list',
+            //     'type' => 'repeater',
+            //     'layout' => 'table',  // 'block' || 'row' || 'table'
+            //     'button_label' => 'Добавить',
+            //     'sub_fields' => array(
+            //         array(
+            //             'key' => 'heading_practical_icon',
+            //             'label' => 'Иконка',
+            //             'name' => 'heading_practical_icon',
+            //             'type' => 'select',
+            //             'allow_null' => 1,
+            //             'multiple' => 0,
+            //             'ui' => 1,
+            //             'return_format' => 'value',  // 'array' || 'label'
+            //             'choices' => [
+            //                 'icon_physics' => 'Физика',   
+            //                 'icon_maths' => 'Математика',   
+            //                 'icon_chemistry' => 'Химия',   
+            //                 'icon_biology' => 'Биология',   
+            //                 'icon_geography' => 'География',   
+            //                 'icon_natural_science' => 'Естествознание',   
+            //                 'icon_ecology' => 'Экология',   
+            //                 'icon_obj' => 'ОБЖ',   
+            //                 'icon_world' => 'Окружающий мир',   
+            //                 'icon_nanotechnology' => 'Нанотехнологии',   
+            //                 'icon_baby' => 'Дошкольного образования',   
+            //                 'icon_engineering' => 'Основы тех. и ин.',   
+            //                 'icon_astronomy' => 'Астрономия',   
+            //                 'icon_history' => 'История и Археология',   
+            //                 'icon_physical' => 'Физическая культура',
+            //             ],
+            //             'default_value' => 'icon_physics',
+            //         ),
+            //         array(
+            //             'key' => 'heading_practical_label',
+            //             'label' => 'Текст',
+            //             'name' => 'heading_practical_label',
+            //             'type' => 'text',
+            //         ),
+            //         array(
+            //             'key' => 'heading_practical_link',
+            //             'label' => 'Ссылка',
+            //             'name' => 'heading_practical_link',
+            //             'type' => 'text',
+            //         ),
+            //     ),
+            // ),
 
         ),
         'location' => array(
@@ -2262,6 +2314,13 @@ function my_template_acf_mataboxes(){
                     'param' => 'page_template',
                     'operator' => '==',
                     'value' => 'template-practical.php',
+                ),
+            ),
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'template-workshop.php',
                 ),
             ),
         ),
@@ -2612,6 +2671,39 @@ function my_template_acf_mataboxes(){
         'menu_order' => 1,
     ));
     // END video post_type
+    // ---------------------------------------------------------
+    // BEGIN video_lab order
+    acf_add_local_field_group(array(
+        'key' => 'acf_video_lab_settings',
+        'title' => 'Порядок отображения лаборатории',
+        'fields' => array(
+            array(
+                'key' => 'video_lab_number',
+                'label' => 'Порядковый номер',
+                'name' => 'video_lab_number',
+                'type' => 'number',
+                'min' => 0,
+                'max' => 100,
+                'step' => 1,
+                'instructions' => 'Введите число от 1 до 100',
+
+            ),
+
+
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'taxonomy',
+                    'operator' => '==',
+                    'value' => 'video-lab',
+                ),
+            ),
+        ),
+
+        'menu_order' => 1,
+    ));
+    // END video_lab
     // ---------------------------------------------------------
 
 }

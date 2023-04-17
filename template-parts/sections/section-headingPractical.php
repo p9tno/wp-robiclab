@@ -33,7 +33,7 @@
                 <div class="heading__img img"><img src="<?php echo $img_url; ?>" alt="alt" /></div>
             </div>
 
-            <div class="heading__left">
+            <div class="heading__left heading__left_practical">
 
                 <h1 class="section__title"><span><?php the_title(); ?></span></h1>
 
@@ -66,16 +66,17 @@
                     <?php } ?>
                 </div>
 
-                <?php 
-                $rows = get_field('heading_practical_list');
-                if( $rows ) { ?>
-                    <div class="heading__others"><span>Смотреть другие практикумы</span></div>
-                    <div class="heading__list">
-                        <?php foreach( $rows as $row ) { ?>
-                            <a class="heading__item" href="<?php echo $row['heading_practical_link']; ?>"><i class="<?php echo $row['heading_practical_icon']; ?>"></i><span><?php echo $row['heading_practical_label']; ?></span></a>
-                        <?php } ?>
-                    </div>
-                <?php } ?>
+        
+                <div class="heading__others"><span>Смотреть другие практикумы</span></div>
+
+                <?php wp_nav_menu(array(
+                    'theme_location' => 'practical',
+                    'menu_class' => 'heading__list',
+                    'container' => false,
+                    )); 
+                ?>
+
+                <!-- <a class="heading__item" href="<?php // echo $row['heading_practical_link']; ?>"><i class="<?php // echo $row['heading_practical_icon']; ?>"></i><span><?php // echo $row['heading_practical_label']; ?></span></a> -->
 
             </div>
         </div>
@@ -83,11 +84,17 @@
 
     <div class="heading__hand bg"></div>
 
-    <a class="following desktop following-single-js" href="#composition">
-        <div class="following__btn"></div>
-        <div class="following__label"><span>Scroll</span></div>
-        <div class="following__mask"></div>
-    </a>
+    <?php if ( is_page_template(['template-practical.php']) ) { ?>
+        <a class="following desktop following-single-js" href="#composition">
+            <div class="following__btn"></div>
+            <div class="following__label"><span>Scroll</span></div>
+            <div class="following__mask"></div>
+        </a>
+    <?php } ?>
+       
+
+
+
 
 </section>
 <!-- end heading-->

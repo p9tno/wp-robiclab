@@ -14,7 +14,10 @@
             $categories = get_terms(
                 'video-lab',
                 array(
-                    // 'orderby'    => 'name',
+                    'meta_key'                 => 'video_lab_number',
+                    'orderby'                  => 'meta_value_num',
+                    'order'                    => 'ASC',
+
                     'hierarchical' => true,
                     'hide_empty' => 0,
                     'parent' => 0
@@ -80,4 +83,4 @@
 
     </div>
 </section>
-<!-- end experiments-->
+<!-- end experiments -->

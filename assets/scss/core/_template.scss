@@ -20,6 +20,8 @@ body {
 
 	overflow: hidden;
 
+	position: relative;
+
 	font-size: $main_font_size;
 
 	@media (min-width: 768px) {
@@ -364,12 +366,12 @@ body {
 	}
 }
 
-::-webkit-scrollbar-button {
-	background-image: url("");
-	background-repeat: no-repeat;
-	width: 0.5em;
-	height: 0;
-}
+// ::-webkit-scrollbar-button {
+// 	background-image: url("");
+// 	background-repeat: no-repeat;
+// 	width: 0.5em;
+// 	height: 0.5em;
+// }
 
 ::-webkit-scrollbar-track {
 	background-color: rgba($color_light_bg, 1);
@@ -397,6 +399,8 @@ body {
 
 ::-webkit-scrollbar {
 	width: 0.75em;
+	height: 0.5em;
+	cursor: pointer;
 }
 
 // * {

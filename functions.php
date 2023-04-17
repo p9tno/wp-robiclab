@@ -84,7 +84,7 @@ function robiclab_setup() {
 			'laboratories_1' => esc_html__( 'laboratories_col_1', 'robiclab' ),
 			'laboratories_2' => esc_html__( 'laboratories_col_2', 'robiclab' ),
 			'help_center' => esc_html__( 'help_center', 'robiclab' ),
-			// 'laboratories_2' => esc_html__( 'laboratories_col_2', 'robiclab' ),
+			'practical' => esc_html__( 'practical', 'robiclab' ),
 			// 'menu-header' => esc_html__( 'header' ),
 			// 'menu-footer' => esc_html__( 'footer' ),
 			// 'menu-footer-service' => esc_html__( 'footer-service' ),
