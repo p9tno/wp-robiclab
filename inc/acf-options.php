@@ -370,6 +370,71 @@ function my_template_acf_mataboxes(){
                     ),
                 ),
             ),
+            // ------------------------------- help_center_links
+            array (
+                'key' => 'tab_help_center_links',
+                'label' => 'Ссылки "Справочный центр"', 
+                'type' => 'tab',
+            ),
+            array(
+                'key' => 'help_center_page_link',
+                'label' => 'Ссылка на страницу "Справочного центра"',
+                'name' => 'help_center_page_link',
+                'type' => 'text',
+                'instructions' => 'Скопируйте и вставьте ссылку страницы, без урла главной страницы. Пример: /spravochnyj-czentr/',
+                'required' => 1,
+            ),
+            array(
+                'key' => 'help_center_links_list',
+                'label' => 'Ссылки',
+                'name' => 'help_center_links_list',
+                'type' => 'repeater',
+                'layout' => 'block',  // 'block' || 'row' || 'table'
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'list_radio',
+                        'label' => 'Выберите нужный <b>ТАБ</b>',
+                        'name' => 'list_radio',
+                        'type' => 'radio',
+                        'layout' => 'horizontal', // horizontal   ||   vertical
+                        'choices' => array(
+                            '0' => 'Офлайн версия на ПК',
+                            '1' => 'Онлайн версия на ПК',
+                            '2' => 'Планшет и телефон',
+                        ),
+                        'default_value' => '0',
+                        'return_format' => 'value',  // 'array' || 'label'
+                        'wrapper' => array (
+                            'width' => '100',
+                        ),
+                    ),
+                    array(
+                        'key' => 'list_text',
+                        'label' => 'Текст ссылки',
+                        'name' => 'list_text',
+                        'type' => 'text',
+                        'instructions' => 'Введите текст ссылки',
+                        'required' => 1,
+                        'wrapper' => array (
+                            'width' => '50',
+                        ),
+                        
+                    ),
+                    array(
+                        'key' => 'list_id',
+                        'label' => 'ID нужного ряда.',
+                        'name' => 'list_id',
+                        'type' => 'text',
+                        'required' => 1,
+                        'instructions' => 'Скопируйте уникальный ID ранее созданый на странице "Справочный центр"',
+                        'wrapper' => array (
+                            'width' => '50',
+                            'class' => 'field__danger',
+                        ),
+                    ),
+                ),
+            ),
         ),
         'location' => array(
             array(
@@ -1748,10 +1813,9 @@ function my_template_acf_mataboxes(){
                         'name' => 'offline_row_id',
                         'type' => 'text',
         
-                        'instructions' => 'Введите id ряда, значение должно быть уникальным. Не используйте кирилицу и цифры. Пример: "onlinewindows"<br>
-                        если навигация по якорю не нужна, оставьте это поле пустым!',
+                        'instructions' => 'Введите id ряда, значение должно быть уникальным. Не используйте кирилицу, цифры, пробелы и другие символы. Пример: "onlinewindows",<br>
+                        <b>если навигация по якорю не нужна, оставьте это поле пустым!</b>',
                         'wrapper' => array (
-                            'width' => '',
                             'class' => 'field__danger',
                         ),
                     ),
@@ -1854,6 +1918,18 @@ function my_template_acf_mataboxes(){
                 'button_label' => 'Добавить',
                 'sub_fields' => array(
                     array(
+                        'key' => 'onnline_row_id',
+                        'label' => 'ID РЯДА',
+                        'name' => 'onnline_row_id',
+                        'type' => 'text',
+        
+                        'instructions' => 'Введите id ряда, значение должно быть уникальным. Не используйте кирилицу, цифры, пробелы и другие символы. Пример: "onlinewindows",<br>
+                        <b>если навигация по якорю не нужна, оставьте это поле пустым!</b>',
+                        'wrapper' => array (
+                            'class' => 'field__danger',
+                        ),
+                    ),
+                    array(
                         'key' => 'row_img_id',
                         'label' => 'Изображение',
                         'name' => 'row_img_id',
@@ -1951,6 +2027,18 @@ function my_template_acf_mataboxes(){
                 'layout' => 'block',  // 'block' || 'row' || 'table'
                 'button_label' => 'Добавить',
                 'sub_fields' => array(
+                    array(
+                        'key' => 'tablet_and_phone_row_id',
+                        'label' => 'ID РЯДА',
+                        'name' => 'tablet_and_phone_row_id',
+                        'type' => 'text',
+        
+                        'instructions' => 'Введите id ряда, значение должно быть уникальным. Не используйте кирилицу, цифры, пробелы и другие символы. Пример: "onlinewindows",<br>
+                        <b>если навигация по якорю не нужна, оставьте это поле пустым!</b>',
+                        'wrapper' => array (
+                            'class' => 'field__danger',
+                        ),
+                    ),
                     array(
                         'key' => 'row_img_id',
                         'label' => 'Изображение',

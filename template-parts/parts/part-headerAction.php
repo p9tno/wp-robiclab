@@ -30,7 +30,7 @@
             <?php } ?>
 
             <div class="header__label mobile"><span>Вы можете позвонить нам в любое время</span></div>
-            <div class="header__btn mobile"><a class="btn" href="#">Позвонить</a></div>
+            <div class="header__btn mobile"><a class="btn" href="tel:<?php echo $number; ?>">Позвонить</a></div>
 
             <?php if (get_field('mail', 'option')) { ?>
                 <div class="header__item desktop">

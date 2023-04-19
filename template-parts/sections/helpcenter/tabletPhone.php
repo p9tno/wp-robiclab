@@ -12,7 +12,7 @@
                 $img_url = $no_img_url;
             }
         ?>
-            <div class="helpcenter__row">
+            <div class="helpcenter__row" <?php if ($row['tablet_and_phone_row_id']) { echo 'id='.$row['tablet_and_phone_row_id'].''; }?>>
                 <div class="container_center">
                     <div class="row">
 

@@ -76,8 +76,6 @@
                     )); 
                 ?>
 
-                <!-- <a class="heading__item" href="<?php // echo $row['heading_practical_link']; ?>"><i class="<?php // echo $row['heading_practical_icon']; ?>"></i><span><?php // echo $row['heading_practical_label']; ?></span></a> -->
-
             </div>
         </div>
     </div>

@@ -22,12 +22,7 @@
                     </div>
 
                     <div class="navbar__col navbar__col_nav_sm desktop">
-                        <div class="navbar__label"><span>Справочный центр</span></div>
-                            <?php wp_nav_menu(array(
-                                'theme_location' => 'help_center',
-                                'container'=>'ul',
-                                )); 
-                            ?>
+                        <?php get_template_part( 'template-parts/parts/part', 'helpNav' ); ?>
                     </div>
 
                     <div class="navbar__col">

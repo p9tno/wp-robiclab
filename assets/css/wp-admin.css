@@ -15,8 +15,11 @@
 */
 
 .field__danger {
-    color: #ff1a1a;
+    color: #0659FB;
 } 
+.field__danger input {
+    border: 1px solid #0659FB;
+}
 
 
 .single_tab_admin {

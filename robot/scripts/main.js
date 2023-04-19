@@ -1,5 +1,5 @@
 $(document).ready(function() { 
-
+    
     function initRobotDesctop () {
         // let slider_services = null;
         let mediaQuerySize = 768;
@@ -10,7 +10,7 @@ $(document).ready(function() {
                 // console.log('init robot');
                 initRobotAnimations();
             } else {
-                // console.log('destroy robot');
+                preloader();
             }
         });
     }
@@ -387,19 +387,6 @@ $(document).ready(function() {
             //     }
             // });
     
-            function preloader() {
-                $(()=>{
-                    setTimeout( () => {
-                        let p = $('#preloader');
-                        p.addClass('hide');
-        
-                        setTimeout( () => {
-                            p.remove()
-                        },500);
-        
-                    },500);
-                });
-            }
             preloader();
     
         });
@@ -521,6 +508,20 @@ $(document).ready(function() {
     
     }
     // initRobotAnimations();
+
+    function preloader() {
+        $(()=>{
+            setTimeout( () => {
+                let p = $('#preloader');
+                p.addClass('hide');
+
+                setTimeout( () => {
+                    p.remove()
+                },500);
+
+            },500);
+        });
+    }
 })
 
 

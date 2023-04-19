@@ -370,16 +370,75 @@ $(document).ready(function() {
     initTabs();
 
     function scroolToSection() {
+
         $(".scroll_js").on("click","a", function (event) {
             event.preventDefault();
             let id  = $(this).attr('href');
- 
-            let top = $(id).offset().top;
-            $('body,html').animate({scrollTop: top}, 1500);
+            let tab_id  = $(this).attr('data-tab');
+            let page_url = $(this).attr('data-url-page');
+            console.log(id);
 
+            let pathname = window.location.pathname;
+
+            if (pathname == page_url) {
+                closeMenu();
+                selectTab(tab_id);
+                scrollToID(id);
+            } else {
+                // console.log(`${page_url}?tab=${tab_id}&id=${id}`);
+                document.location.href = (`${page_url}?tab=${tab_id}&id=${id}`);
+            }
         });
+
+        if($_GET('tab') && $_GET('id')) {
+            setTimeout( () => {
+                console.log($_GET('tab'));
+                console.log($_GET('id'));
+                selectTab($_GET('tab'));
+                scrollToID($_GET('id'));
+            },1000);
+        }
+
+        function closeMenu() {
+            $('.toggle__toggle').removeClass('active');
+            $('.header__nav').removeClass('active');
+            $('.header').removeClass('nav-active');
+            $('body').removeClass('nav-open')
+
+            if ($('header').hasClass('header_primary')) {
+                $( 'header' ).removeClass( 'header_primary_active' );
+            }
+
+            $('.close_nav_js').addClass('active');
+            $('.open_nav_js').removeClass('active');
+        }
+        function selectTab(tab_id) {
+            $('.tabs-wrapper').each(function() {
+                let ths = $(this);
+                ths.find('.tab-masc').removeClass('active').eq(tab_id).addClass('active');
+                ths.find('.tab-item').hide().eq(tab_id).fadeIn();
+            })
+        }
+        function scrollToID(id){
+            let top = $(`#${id}`).offset().top;
+            $('body,html').animate({scrollTop: top}, 1500);
+        }
+        function $_GET(key) {
+            let s = window.location.search;
+            s = s.match(new RegExp(key + '=([^&=]+)'));
+            // console.log(s);
+            // console.log($_GET('opendiv'));
+            return s ? s[1] : false;
+        }
+
+          
+            
     };
     scroolToSection();
+
+
+
+    
 
   
 

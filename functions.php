@@ -27,6 +27,7 @@ function robiclab_scripts() {
 		wp_enqueue_script( 'robiclab-onepage-scroll', get_template_directory_uri() . '/assets/js/jquery.onepage-scroll.min.js', array(), _S_VERSION, true );
 		wp_enqueue_script( 'robiclab-scroll', get_template_directory_uri() . '/assets/js/scroll.js', array(), _S_VERSION, true );
 	}
+	
 	if ( !is_page_template(['template-homepage.php']) ){
 		wp_enqueue_script( 'robiclab-preloader', get_template_directory_uri() . '/assets/js/preloader.js', array(), _S_VERSION, true );
 	}

@@ -12,7 +12,7 @@
 
                 <div class="form__row">
                     <div class="form__label"><span>Ваше имя*</span></div>
-                    <input type="text" name="name" required="required" placeholder="Ввведите ваше имя" />
+                    <input type="text" name="name" required="required" placeholder="Введите ваше имя" />
                 </div>
 
                 <div class="form__row">
@@ -22,12 +22,12 @@
 
                 <div class="form__row">
                     <div class="form__label"><span>Ваша почта*</span></div>
-                    <input type="email" name="email" required="required" placeholder="Ввведите ваш email" />
+                    <input type="email" name="email" required="required" placeholder="Введите ваш email" />
                 </div>
 
                 <div class="form__row form__row_textarea">
                     <div class="form__label"><span>Ваше сообщение</span></div>
-                    <textarea type="text" name="message" placeholder="Ввведите ваше сообщение"></textarea>
+                    <textarea type="text" name="message" placeholder="Введите ваше сообщение"></textarea>
                 </div>
 
                 <div class="form__row">

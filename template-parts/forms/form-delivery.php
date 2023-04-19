@@ -22,7 +22,7 @@
             <input type="hidden" name="notspam" value="" />
             <div class="form__row">
                 <div class="form__label"><span>Ваше имя*</span></div>
-                <input type="text" required="required" placeholder="Ввведите ваше имя" />
+                <input type="text" required="required" placeholder="Введите ваше имя" />
             </div>
             <div class="form__row">
                 <div class="form__label"><span>Телефон*</span></div>
@@ -30,7 +30,7 @@
             </div>
             <div class="form__row">
                 <div class="form__label"><span>Ваша почта*</span></div>
-                <input type="email" required="required" placeholder="Ввведите ваш email" />
+                <input type="email" required="required" placeholder="Введите ваш email" />
             </div>
             <div class="form__row">
                 <div class="button">
