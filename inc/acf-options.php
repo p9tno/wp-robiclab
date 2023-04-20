@@ -2574,6 +2574,68 @@ function my_template_acf_mataboxes(){
     ));
     // END composition section
     // ---------------------------------------------------------
+    // BEGIN example section
+    acf_add_local_field_group(array(
+        'key' => 'acf_example_settings',
+        'title' => 'Настройки эксперимента',
+        'fields' => array(
+            // array(
+            //     'key' => 'example_boolean',
+            //     'label' => 'Отображать блок?',
+            //     'name' => 'example_boolean',
+            //     'type' => 'true_false',
+            //     'default_value' => 1,
+            //     'ui' => 1,
+            //     'ui_on_text' => 'Да',
+            //     'ui_off_text' => 'Нет',
+            // ),
+            array(
+                'key' => 'example_title',
+                'label' => 'Заголовок',
+                'name' => 'example_title',
+                'type' => 'text',
+            ),
+            array(
+                'key' => 'example_desc',
+                'label' => 'Описание',
+                'name' => 'example_desc',
+                'type' => 'textarea',
+                'rows' => 4,
+                'instructions' => 'Используйте тег <b>p</b> для выделения абзацев',
+                'placeholder' => '<p>Абзац</p>'
+            ),
+            array(
+                'key' => 'example_radio',
+                'label' => 'Выбор эксперимента',
+                'name' => 'example_radio',
+                'type' => 'radio',
+                'layout' => 'horizontal', // horizontal   ||   vertical
+                'choices' => array(
+                    'mechanics' => 'Механика',
+                    'thermodynamics' => 'Молекулярная физика и термодинамика',
+                    'electrodynamics' => 'Электродинамика',
+                    'optics' => 'Оптика',
+                    'quantum' => 'Квантовые явления',
+                ),
+                'default_value' => 'mechanics',
+                'return_format' => 'value',  // 'array' || 'label'
+            ),
+
+
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'template-practical.php',
+                )
+            ),
+        ),
+        'menu_order' => 20,
+    ));
+    // END example section
+    // ---------------------------------------------------------
 
 
 
