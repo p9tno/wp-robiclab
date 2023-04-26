@@ -6,7 +6,7 @@
                 <span>© ООО"робиклаб" 2011 - <script type="text/javascript">document.write(new Date().getFullYear());</script> Все права защищены.</span>
 
                 <?php if (get_field('boolean_footer_policy', 'option')) { ?>
-                    <a class="show_js" href="#policy">Политика конфендициальности</a>
+                    <a class="show_js" href="#policy">Политика конфиденциальности</a>
                 <?php } ?>
 
                 <?php if (get_field('footer_link_map', 'option')) { ?>

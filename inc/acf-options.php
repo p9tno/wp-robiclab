@@ -1090,6 +1090,30 @@ function my_template_acf_mataboxes(){
                 'default_value' => 'Состав лаборатории',
             ),
             array(
+                'key' => 'box_img_id',
+                'label' => 'Изображение',
+                'name' => 'box_img_id',
+                'type' => 'image',
+                'return_format' => 'id',  // 'id' || 'url' || 'array'
+                'preview_size' => 'thumbnail', // (thumbnail, medium, large, full or custom size)
+                'instructions' => 'Рекомендуемое разрешение изображения не более 900/635px.',
+                'wrapper' => array (
+                    'width' => '50',
+                ),
+            ),
+            array(
+                'key' => 'box_dark_img_id',
+                'label' => 'Изображение, для темной темы',
+                'name' => 'box_dark_img_id',
+                'type' => 'image',
+                'return_format' => 'id',  // 'id' || 'url' || 'array'
+                'preview_size' => 'thumbnail', // (thumbnail, medium, large, full or custom size)
+                'instructions' => 'Рекомендуемое разрешение изображения не более 900/635px.',
+                'wrapper' => array (
+                    'width' => '50',
+                ),
+            ),
+            array(
                 'key' => 'compare_modal_title',
                 'label' => 'Заголовок модального окна "Сравнить наборы"',
                 'name' => 'compare_modal_title',
@@ -2640,92 +2664,92 @@ function my_template_acf_mataboxes(){
 
 
 
-    // BEGIN test section
-    acf_add_local_field_group(array(
-        'key' => 'acf_test_settings',
-        'title' => 'Настройки test',
-        'fields' => array(
-            array(
-                'key' => 'test_boolean',
-                'label' => 'Отображать блок?',
-                'name' => 'test_boolean',
-                'type' => 'true_false',
-                'default_value' => 1,
-                'ui' => 1,
-                'ui_on_text' => 'Да',
-                'ui_off_text' => 'Нет',
-            ),
-            array(
-                'key' => 'test_title',
-                'label' => 'Заголовок',
-                'name' => 'test_title',
-                'type' => 'text',
+    // // BEGIN test section
+    // acf_add_local_field_group(array(
+    //     'key' => 'acf_test_settings',
+    //     'title' => 'Настройки test',
+    //     'fields' => array(
+    //         array(
+    //             'key' => 'test_boolean',
+    //             'label' => 'Отображать блок?',
+    //             'name' => 'test_boolean',
+    //             'type' => 'true_false',
+    //             'default_value' => 1,
+    //             'ui' => 1,
+    //             'ui_on_text' => 'Да',
+    //             'ui_off_text' => 'Нет',
+    //         ),
+    //         array(
+    //             'key' => 'test_title',
+    //             'label' => 'Заголовок',
+    //             'name' => 'test_title',
+    //             'type' => 'text',
 
-                'instructions' => '',
-                'required' => 0,
-                'default_value' => '',
-                'placeholder' => '',
-                'wrapper' => array (
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-            ),
-            array(
-                'key' => 'test_desc',
-                'label' => 'Описание',
-                'name' => 'test_desc',
-                'type' => 'textarea',
-                'rows' => 2,
-            ),
-            array(
-                'key' => 'test_img_id',
-                'label' => 'Изображение',
-                'name' => 'test_img_id',
-                'type' => 'image',
-                'return_format' => 'id',  // 'id' || 'url' || 'array'
-                'preview_size' => 'thumbnail', // (thumbnail, medium, large, full or custom size)
-                'instructions' => 'Рекомендуемое разрешение изображения не более 230/350px.',
-            ),
-            array(
-                'key' => 'test_list',
-                'label' => 'Список',
-                'name' => 'test_list',
-                'type' => 'repeater',
-                'layout' => 'table',  // 'block' || 'row' || 'table'
-                'min' => 0,
-                'max' => 0,
-                'button_label' => 'Добавить',
-                'sub_fields' => array(
-                    array(
-                        'key' => 'list_item',
-                        'label' => 'Элемент списка',
-                        'name' => 'list_item',
-                        'type' => 'text',
-                    ),
-                ),
-            ),
-        ),
-        'location' => array(
-            array(
-                array(
-                    'param' => 'page_template',
-                    'operator' => '==',
-                    'value' => 'template-homepage.php',
-                )
-            ),
-            array(
-                array(
-                    'param' => 'page_template',
-                    'operator' => '==',
-                    'value' => 'template-contacts.php',
-                ),
-            ),
-        ),
-        'menu_order' => 100,
-    ));
-    // END test section
-    // ---------------------------------------------------------
+    //             'instructions' => '',
+    //             'required' => 0,
+    //             'default_value' => '',
+    //             'placeholder' => '',
+    //             'wrapper' => array (
+    //                 'width' => '',
+    //                 'class' => '',
+    //                 'id' => '',
+    //             ),
+    //         ),
+    //         array(
+    //             'key' => 'test_desc',
+    //             'label' => 'Описание',
+    //             'name' => 'test_desc',
+    //             'type' => 'textarea',
+    //             'rows' => 2,
+    //         ),
+    //         array(
+    //             'key' => 'test_img_id',
+    //             'label' => 'Изображение',
+    //             'name' => 'test_img_id',
+    //             'type' => 'image',
+    //             'return_format' => 'id',  // 'id' || 'url' || 'array'
+    //             'preview_size' => 'thumbnail', // (thumbnail, medium, large, full or custom size)
+    //             'instructions' => 'Рекомендуемое разрешение изображения не более 230/350px.',
+    //         ),
+    //         array(
+    //             'key' => 'test_list',
+    //             'label' => 'Список',
+    //             'name' => 'test_list',
+    //             'type' => 'repeater',
+    //             'layout' => 'table',  // 'block' || 'row' || 'table'
+    //             'min' => 0,
+    //             'max' => 0,
+    //             'button_label' => 'Добавить',
+    //             'sub_fields' => array(
+    //                 array(
+    //                     'key' => 'list_item',
+    //                     'label' => 'Элемент списка',
+    //                     'name' => 'list_item',
+    //                     'type' => 'text',
+    //                 ),
+    //             ),
+    //         ),
+    //     ),
+    //     'location' => array(
+    //         array(
+    //             array(
+    //                 'param' => 'page_template',
+    //                 'operator' => '==',
+    //                 'value' => 'template-homepage.php',
+    //             )
+    //         ),
+    //         array(
+    //             array(
+    //                 'param' => 'page_template',
+    //                 'operator' => '==',
+    //                 'value' => 'template-contacts.php',
+    //             ),
+    //         ),
+    //     ),
+    //     'menu_order' => 100,
+    // ));
+    // // END test section
+    // // ---------------------------------------------------------
 
 
 

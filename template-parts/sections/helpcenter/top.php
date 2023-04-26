@@ -17,13 +17,14 @@
     <div class="container_center">
         <h1 class="section__title"><span><?php the_title(); ?></span></h1>
 
-        <div class="helpcenter__nav">
-            <?php wp_nav_menu(array(
-                'theme_location' => 'help_center',
-                'container'=>'ul',
-                )); 
+        <!-- <div class="helpcenter__nav">
+            <?php 
+                // wp_nav_menu(array(
+                // 'theme_location' => 'help_center',
+                // 'container'=>'ul',
+                // )); 
             ?>
-        </div>
+        </div> -->
 
         <div class="helpcenter__img img"><img src="<?php echo $img_url; ?>" alt="alt" /></div>
         <div class="helpcenter__content">

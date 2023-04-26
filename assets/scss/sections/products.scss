@@ -87,12 +87,19 @@
         &_disable {
             background-image: url("../img/star_disable.svg");
             pointer-events: none;
+            // .products__icon {
+            //     color: $color_dark;
+            // }
+
+            // .products__label {
+            //     color: $color_dark;
+            // }
             .products__icon {
-                color: $color_dark;
+                color: $color_info;
             }
 
             .products__label {
-                color: $color_dark;
+                color: #005EA8;
             }
         }
     }

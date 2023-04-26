@@ -2565,10 +2565,10 @@ body {
   pointer-events: none;
 }
 .products__item_disable .products__icon {
-  color: #282B33;
+  color: #0659FB;
 }
 .products__item_disable .products__label {
-  color: #282B33;
+  color: #005EA8;
 }
 .products__icon {
   color: #ffffff;
@@ -2869,7 +2869,7 @@ body {
   height: 100%;
   padding: 0.5em 1em 0.5em 4em;
   text-decoration: none;
-  color: #ffffff;
+  color: #ffffff !important;
   background-color: rgba(220, 233, 255, 0.3);
   border-radius: 0.5625em;
   font-size: 0.875em;
@@ -2929,7 +2929,6 @@ body {
 .equipment__box {
   width: 106.25em;
   height: 75em;
-  background-image: url("../img/box.webp");
   font-size: 0.2em;
 }
 @media (min-width: 768px) {
@@ -3205,6 +3204,12 @@ body {
 }
 .drop__item {
   padding: 0.25em 1em;
+}
+.drop__item:first-child {
+  padding-top: 0.5em;
+}
+.drop__item:last-child {
+  padding-bottom: 0.75em;
 }
 .drop__item span {
   font-size: 0.75em;

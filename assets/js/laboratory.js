@@ -394,7 +394,6 @@ $(document).ready(function() {
         initLabOptics();
     } else if (nameLab == 'quantum') {
         initLabQuantum();
-        console.log('initLabQuantum');
     } else if (nameLab == 'mechanics') {
         initLabMechanics();
     }
