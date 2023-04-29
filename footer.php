@@ -16,7 +16,7 @@
 
 			
 			<?php get_template_part( 'template-parts/modals/modal', 'info' ); ?>
-			<?php get_template_part( 'template-parts/modals/modal', 'policy' ); ?>
+			<?php // get_template_part( 'template-parts/modals/modal', 'policy' ); ?>
 			<?php get_template_part( 'template-parts/modals/modal', 'reportBug' ); ?>
 			<?php get_template_part( 'template-parts/modals/modal', 'modalVideo' ); ?>
 

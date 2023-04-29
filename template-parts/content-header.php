@@ -4,8 +4,8 @@ if (
     is_page_template(['template-experiments.php'])
     || is_page_template(['template-delivery.php'])
     || is_page_template(['template-communications.php'])
-    // || is_page_template(['template-practical.php'])
-    // || is_page_template(['template-homepage.php'])
+    || is_page_template(['template-sitemap.php'])
+    || is_page_template(['template-singlepage.php'])
 
 ) {
     $header_class = 'header_primary header_primary_active';

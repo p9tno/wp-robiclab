@@ -829,7 +829,7 @@ body {
   counter-increment: line;
 }
 .counter-item .counter-el:before {
-  content: counter(line) " ";
+  content: counter(line) ". ";
 }
 
 ::-webkit-scrollbar-track {
@@ -2474,7 +2474,6 @@ body {
 }
 @media (min-width: 768px) {
   .footerScroll__hand {
-    font-size: 1.15em;
     position: absolute;
     bottom: 8.75em;
     right: 0;
@@ -2616,14 +2615,14 @@ body {
   }
 }
 .products__box {
-  background-image: url("../img/box.webp");
+  background-image: url("../img/box2.png");
   width: 22.5em;
   height: 19.4375em;
   margin-left: -1em;
 }
 @media (min-width: 768px) {
   .products__box {
-    background-image: url("../img/box.webp");
+    background-image: url("../img/box2.png");
     width: 53.75em;
     height: 37.5em;
     margin-left: 0;
@@ -2857,7 +2856,6 @@ body {
 }
 .heading__list li {
   position: relative;
-  line-height: 1;
 }
 .heading__list li.current_page_item a {
   background-color: rgba(220, 233, 255, 0.1);
@@ -2909,7 +2907,7 @@ body {
 }
 @media (min-width: 768px) {
   .heading .heading__left_practical {
-    width: 43em;
+    width: 46em;
   }
 }
 
@@ -3442,7 +3440,7 @@ body {
   }
 }
 .composition__item {
-  margin-bottom: 0.375em;
+  margin-bottom: 0.75em;
 }
 @media (min-width: 768px) {
   .composition__item {

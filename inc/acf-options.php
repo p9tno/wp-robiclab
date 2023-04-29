@@ -202,14 +202,11 @@ function my_template_acf_mataboxes(){
                 'type' => 'tab',
             ),
             array(
-                'key' => 'boolean_footer_policy',
-                'label' => 'Отображать блок? (Политика конфендициальности)',
-                'name' => 'boolean_footer_policy',
-                'type' => 'true_false',
-                'default_value' => 1,
-                'ui' => 1,
-                'ui_on_text' => 'Да',
-                'ui_off_text' => 'Нет',
+                'key' => 'footer_link_policy',
+                'label' => 'Политика конфендициальности',
+                'name' => 'footer_link_policy',
+                'type' => 'link',
+                'return_format' => 'array',  // 'array' || 'url'
             ),
             array(
                 'key' => 'footer_link_map',
@@ -264,27 +261,27 @@ function my_template_acf_mataboxes(){
                 'ui_off_text' => 'Нет',
             ),
             // ------------------------------- privacy
-            array (
-                'key' => 'tab_content_privacy',
-                'label' => 'Политика конфиденциальности', 
-                'type' => 'tab',
-            ),
-            array(
-                'key' => 'privacy_title',
-                'label' => 'Заголовок',
-                'name' => 'privacy_title',
-                'type' => 'text',
-            ),
-            array(
-                'key' => 'privacy_content',
-                'label' => 'Контент',
-                'name' => 'privacy_content',
-                'type' => 'wysiwyg',
-                'tabs' => 'all',  // 'visual' || 'text'
-                'toolbar' => 'full',  // 'basic'
-                'media_upload' => 0,
-                'delay' => 0,
-            ),
+            // array (
+            //     'key' => 'tab_content_privacy',
+            //     'label' => 'Политика конфиденциальности', 
+            //     'type' => 'tab',
+            // ),
+            // array(
+            //     'key' => 'privacy_title',
+            //     'label' => 'Заголовок',
+            //     'name' => 'privacy_title',
+            //     'type' => 'text',
+            // ),
+            // array(
+            //     'key' => 'privacy_content',
+            //     'label' => 'Контент',
+            //     'name' => 'privacy_content',
+            //     'type' => 'wysiwyg',
+            //     'tabs' => 'all',  // 'visual' || 'text'
+            //     'toolbar' => 'full',  // 'basic'
+            //     'media_upload' => 0,
+            //     'delay' => 0,
+            // ),
             // ------------------------------- icon
             array (
                 'key' => 'tab_icon',
@@ -1874,7 +1871,23 @@ function my_template_acf_mataboxes(){
                         'rows' => 2,
                         'default_value' => 'Рекомендации входят в состав готовых решений по цифровым лабораториям и содержат руководство по работе с ними, а также описание экспериментов.',
                         'wrapper' => array (
-                            'width' => '70',
+                            'width' => '100',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_radio',
+                        'label' => 'Скачать/Перейти',
+                        'name' => 'row_radio',
+                        'type' => 'radio',
+                        'layout' => 'vertical', // horizontal   ||   vertical
+                        'choices' => array(
+                            'btn_transform' => 'Скачать',
+                            'empty' => 'Перейти',
+                        ),
+                        'default_value' => 'btn_transform',
+                        'return_format' => 'value',  // 'array' || 'label'
+                        'wrapper' => array (
+                            'width' => '40',
                         ),
                     ),
                     array(
@@ -1885,7 +1898,7 @@ function my_template_acf_mataboxes(){
                         'instructions' => 'Скачать инструкцию',
                         'return_format' => 'array',  // 'array' || 'url'
                         'wrapper' => array (
-                            'width' => '30',
+                            'width' => '60',
                         ),
                     ),
                     array(
@@ -1984,7 +1997,23 @@ function my_template_acf_mataboxes(){
                         'rows' => 2,
                         'default_value' => 'Рекомендации входят в состав готовых решений по цифровым лабораториям и содержат руководство по работе с ними, а также описание экспериментов.',
                         'wrapper' => array (
-                            'width' => '70',
+                            'width' => '100',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_radio',
+                        'label' => 'Скачать/Перейти',
+                        'name' => 'row_radio',
+                        'type' => 'radio',
+                        'layout' => 'vertical', // horizontal   ||   vertical
+                        'choices' => array(
+                            'btn_transform' => 'Скачать',
+                            'empty' => 'Перейти',
+                        ),
+                        'default_value' => 'btn_transform',
+                        'return_format' => 'value',  // 'array' || 'label'
+                        'wrapper' => array (
+                            'width' => '40',
                         ),
                     ),
                     array(
@@ -1995,7 +2024,7 @@ function my_template_acf_mataboxes(){
                         'instructions' => 'Скачать инструкцию',
                         'return_format' => 'array',  // 'array' || 'url'
                         'wrapper' => array (
-                            'width' => '30',
+                            'width' => '60',
                         ),
                     ),
                     array(
@@ -2094,7 +2123,23 @@ function my_template_acf_mataboxes(){
                         'rows' => 2,
                         'default_value' => 'Рекомендации входят в состав готовых решений по цифровым лабораториям и содержат руководство по работе с ними, а также описание экспериментов.',
                         'wrapper' => array (
-                            'width' => '70',
+                            'width' => '100',
+                        ),
+                    ),
+                    array(
+                        'key' => 'row_radio',
+                        'label' => 'Скачать/Перейти',
+                        'name' => 'row_radio',
+                        'type' => 'radio',
+                        'layout' => 'vertical', // horizontal   ||   vertical
+                        'choices' => array(
+                            'btn_transform' => 'Скачать',
+                            'empty' => 'Перейти',
+                        ),
+                        'default_value' => 'btn_transform',
+                        'return_format' => 'value',  // 'array' || 'label'
+                        'wrapper' => array (
+                            'width' => '40',
                         ),
                     ),
                     array(
@@ -2105,7 +2150,7 @@ function my_template_acf_mataboxes(){
                         'instructions' => 'Скачать инструкцию',
                         'return_format' => 'array',  // 'array' || 'url'
                         'wrapper' => array (
-                            'width' => '30',
+                            'width' => '60',
                         ),
                     ),
                     array(

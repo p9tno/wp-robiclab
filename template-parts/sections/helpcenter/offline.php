@@ -56,7 +56,7 @@
                                 $target = $link['target'];
                                 ?>
                                 <div class="row__button">
-                                    <a class="btn btn_circle btn_transform" <?php if ($target) { echo 'target="_blank"'; } ?> href="<?php echo $url; ?>">
+                                    <a class="btn btn_circle <?php echo $row['row_radio']; ?>" <?php if ($target) { echo 'target="_blank"'; } ?> href="<?php echo $url; ?>">
                                         <span><?php echo $title; ?></span><i class="icon_arrow_circle"></i>
                                     </a>
                                 </div>

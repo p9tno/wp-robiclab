@@ -29,7 +29,12 @@
 
 <?php
 $class_dark = '';
-if ( is_page_template(['template-experiments.php']) ) {
+if ( is_page_template(['template-experiments.php']) 
+    // || is_page_template(['template-delivery.php'])
+    || is_page_template(['template-singlepage.php'])
+    || is_page_template(['template-sitemap.php'])
+
+) {
     $class_dark = 'breadcrumbs_dark';
 }
 ?>

@@ -361,7 +361,7 @@ body {
 
 	.counter-el {
 		&:before {
-			content: counter(line) ' ';
+			content: counter(line) '. ';
 		}
 	}
 }
