@@ -36,9 +36,17 @@
                 <div class="tabs-wrapper">
 
                     <div class="tabs">
-                        <span class="tab">Базовая</span>
-                        <span class="tab">Стандартная</span>
-                        <span class="tab">Профильная</span>
+                        <?php if (get_field('equipment_base_boolean')) { ?>
+                            <span class="tab">Базовая</span>
+                        <?php } ?>
+
+                        <?php if (get_field('equipment_standard_boolean')) { ?>
+                            <span class="tab">Стандартная</span>
+                        <?php } ?>
+
+                        <?php if (get_field('equipment_profile_boolean')) { ?>
+                            <span class="tab">Профильная</span>
+                        <?php } ?>
 
                         <?php if (get_field('equipment_dot_boolean')) { ?>
                             <span class="tab tab_danger">Точка роста</span>
@@ -47,9 +55,17 @@
                     </div>
 
                     <div class="tabs-content">
-                        <?php get_template_part( 'template-parts/tabs/tab', 'base' ); ?>
-                        <?php get_template_part( 'template-parts/tabs/tab', 'standard' ); ?>
-                        <?php get_template_part( 'template-parts/tabs/tab', 'profile' ); ?>
+                        <?php if (get_field('equipment_base_boolean')) { ?>
+                            <?php get_template_part( 'template-parts/tabs/tab', 'base' ); ?>
+                        <?php } ?>
+
+                        <?php if (get_field('equipment_standard_boolean')) { ?>
+                            <?php get_template_part( 'template-parts/tabs/tab', 'standard' ); ?>
+                        <?php } ?>
+
+                        <?php if (get_field('equipment_profile_boolean')) { ?>
+                            <?php get_template_part( 'template-parts/tabs/tab', 'profile' ); ?>
+                        <?php } ?>
 
                         <?php if (get_field('equipment_dot_boolean')) { ?>
                             <?php get_template_part( 'template-parts/tabs/tab', 'dot' ); ?>

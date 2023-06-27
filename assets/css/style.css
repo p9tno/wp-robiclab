@@ -7266,6 +7266,9 @@ input[type=number] {
 .dark_theme .collapse {
   background-color: #31343D;
 }
+.dark_theme .collapse .section__content {
+  color: #B5B5B5;
+}
 .dark_theme .collapse .section__content p {
   color: #B5B5B5;
 }

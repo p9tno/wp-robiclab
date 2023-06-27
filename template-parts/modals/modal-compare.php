@@ -37,9 +37,18 @@
                         </div>
 
                         <div class="table__body">
-                            <?php include 'row/base.php'; ?>
-                            <?php include 'row/standard.php'; ?>
-                            <?php include 'row/profile.php'; ?>
+                            <?php if (get_field('equipment_base_boolean')) { ?>
+                                <?php include 'row/base.php'; ?>
+                            <?php } ?>
+
+                            <?php if (get_field('equipment_standard_boolean')) { ?>
+                                <?php include 'row/standard.php'; ?>
+                            <?php } ?>
+
+                            <?php if (get_field('equipment_profile_boolean')) { ?>
+                                <?php include 'row/profile.php'; ?>
+                            <?php } ?>
+
                         </div>
                     </div>
                 </div>
