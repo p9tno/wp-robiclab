@@ -4,15 +4,67 @@ $(document).ready(function() {
         // let slider_services = null;
         let mediaQuerySize = 768;
 
-        $(window).on('load resize', function () {
+        // $(window).on('load resize', function () {
+        $(window).on('load', function () {
             let windowWidth = $(this).innerWidth();
             if (windowWidth >= mediaQuerySize) {
-                // console.log('init robot');
-                initRobotAnimations();
+                initRobotAnimations();                
             } else {
                 preloader();
             }
         });
+        
+        var app = {
+            pageScroll: '',
+            lgWidth: 1200,
+            mdWidth: 992,
+            smWidth: 768,
+            resized: false,
+            iOS: function () {
+                return navigator.userAgent.match( /iPhone|iPad|iPod/i );
+            },
+            touchDevice: function () {
+                return navigator.userAgent.match( /iPhone|iPad|iPod|Android|BlackBerry|Opera Mini|IEMobile/i );
+            }
+        };
+        
+        function isLgWidth() {
+            return $( window ).width() >= app.lgWidth;
+        } // >= 1200
+        function isMdWidth() {
+            return $( window ).width() >= app.mdWidth && $( window ).width() < app.lgWidth;
+        } //  >= 992 && < 1200
+        function isSmWidth() {
+            return $( window ).width() >= app.smWidth && $( window ).width() < app.mdWidth;
+        } // >= 768 && < 992
+        function isXsWidth() {
+            return $( window ).width() < app.smWidth;
+        } // < 768
+        function isIOS() {
+            return app.iOS();
+        } // for iPhone iPad iPod
+        function isTouch() {
+            return app.touchDevice();
+        } // for touch device
+
+        window.addEventListener('resize', () => {
+            // Запрещаем выполнение скриптов при смене только высоты вьюпорта (фикс для скролла в IOS и Android >=v.5)
+            if (app.resized == screen.width) { return; }
+            app.resized = screen.width;
+            checkOnResize();
+        });
+    
+        function checkOnResize() {
+            if (isXsWidth()) {
+                location.reload();
+                return;
+                // console.log('isLgWidth');
+                // initRobotAnimations = null;
+            } else {
+                // console.log('< 768');
+                initRobotAnimations();
+            }
+        }
     }
     initRobotDesctop();
 

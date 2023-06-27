@@ -12,7 +12,20 @@
                 <?php } ?>
 
                 <div class="section__download">
-                    <?php get_template_part( 'template-parts/parts/part', 'download' ); ?>
+                    <?php 
+                    $rows = get_field('heading_links');
+                    if( $rows ) { ?>
+                        <div class="download">
+                            <?php foreach( $rows as $row ) { ?>
+                                <div class="download__item">
+                                    <div class="download__icon"><i class="<?php echo $row['download_icon']; ?>"></i></div>
+                                    <div class="download__link">
+                                        <a target="_blank" href="<?php echo $row['download_url']; ?>"><?php echo $row['download_text']; ?></a>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
                 </div>
 
 

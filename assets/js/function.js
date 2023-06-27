@@ -273,7 +273,53 @@ $(document).ready(function() {
             }
         });
     }
-    changeButton();
+    // changeButton();
+
+    function initAnimationButton() {
+        let cor = bodymovin.loadAnimation({
+            container: document.getElementById('cor'), // Required
+            path: '/wp-content/themes/robiclab/assets/json/cor1.json', // Required
+            renderer: 'svg', // Required
+            loop: true, // Optional
+            autoplay: false, // Optional
+            // autoplay: true, // Optional
+            name: "chart-cor",
+        })
+    }
+
+    initAnimationButton();
+
+    function stopAnimateButton() {
+        // console.log('stop');
+        lottie.stop('chart-cor');
+    }
+    function playAnimationButton() {
+        // console.log('play');
+        lottie.play('chart-cor');
+    }
+    onVisible('.firstscreen',playAnimationButton,stopAnimateButton);
+
+    function initAnimationButtonMobile() {
+        let corMobile = bodymovin.loadAnimation({
+            container: document.getElementById('corMobile'), // Required
+            path: '/wp-content/themes/robiclab/assets/json/cor1.json', // Required
+            renderer: 'svg', // Required
+            loop: true, // Optional
+            autoplay: false, // Optional
+            // autoplay: true, // Optional
+            name: "chart-corMobile",
+        })
+    }
+    initAnimationButtonMobile();
+    function stopAnimateButtonMobile() {
+        // console.log('stop');
+        lottie.stop('chart-corMobile');
+    }
+    function playAnimationButtonMobile() {
+        // console.log('play');
+        lottie.play('chart-corMobile');
+    }
+    onVisible('.firstscreen',playAnimationButtonMobile,stopAnimateButtonMobile);
 
 
 

@@ -1039,6 +1039,54 @@ function my_template_acf_mataboxes(){
                 'placeholder' => '<p>Абзац</p>'
             ),
             array(
+                'key' => 'heading_links',
+                'label' => 'Список ссылок на скачивание',
+                'name' => 'heading_links',
+                'type' => 'repeater',
+                'layout' => 'table',  // 'block' || 'row' || 'table'
+                'min' => 0,
+                'max' => 3,
+                'button_label' => 'Добавить',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'download_icon',
+                        'label' => 'Иконка',
+                        'name' => 'download_icon',
+                        'type' => 'select',
+                        'ui' => 1,
+                        'return_format' => 'value',  // 'array' || 'label'
+                        'choices' => [
+                            'icon_windows' => 'windows',   
+                            'icon_linux' => 'linux',   
+                            'icon_mac' => 'mac',   
+                        ],
+                        'default_value' => 'icon_windows',
+                        'wrapper' => array (
+                            'width' => '33',
+                        ),
+                    ),
+                    array(
+                        'key' => 'download_text',
+                        'label' => 'Текст ссылки',
+                        'name' => 'download_text',
+                        'type' => 'text',
+                        'wrapper' => array (
+                            'width' => '33',
+                        ),
+                    ),
+                    array(
+                        'key' => 'download_url',
+                        'label' => 'Cсылка',
+                        'name' => 'download_url',
+                        'type' => 'link',
+	                    'return_format' => 'url',  // 'array'
+                        'wrapper' => array (
+                            'width' => '33',
+                        ),
+                    ),
+                ),
+            ),
+            array(
                 'key' => 'heading_btn_white',
                 'label' => 'Белая кнопка',
                 'name' => 'heading_btn_white',
